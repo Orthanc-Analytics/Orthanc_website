@@ -1,0 +1,10 @@
+# Build output and dependencies
+dist
+node_modules
+
+# Temporary render files
+tools/.render-*.html
+
+# OS / editor
+.DS_Store
+Thumbs.db

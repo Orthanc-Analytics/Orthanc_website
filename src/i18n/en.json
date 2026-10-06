@@ -1,0 +1,827 @@
+{
+  "meta": {
+    "locale": "en_GB",
+    "langName": "English"
+  },
+  "common": {
+    "skip": "Skip to content",
+    "brandSub": "Analytics",
+    "homeLabel": "Orthanc Analytics home page",
+    "langSwitch": "Language",
+    "placeholder": "[TO COMPLETE]",
+    "sourceLabel": "Source",
+    "breadcrumbHome": "Home",
+    "breadcrumbLabel": "Breadcrumb",
+    "ogAlt": "Orthanc Analytics: political intelligence for Europe, built on verifiable data.",
+    "linkedinOf": "{name} on LinkedIn",
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X"
+    },
+    "nav": {
+      "label": "Main",
+      "polis": "Polis platform",
+      "investors": "Investors",
+      "company": "Company",
+      "contact": "Contact",
+      "menu": "Menu",
+      "close": "Close"
+    },
+    "cta": {
+      "demo": "Request a demo",
+      "demoPolis": "Request a Polis demo",
+      "demoShort": "Demo"
+    },
+    "ctaBand": {
+      "label": "Demo",
+      "title": "See your territory in Orthanc Polis.",
+      "body": "Tell us your region and your next election. We’ll build the demo around them."
+    },
+    "contact": {
+      "email": "Email",
+      "phone": "Phone",
+      "office": "Registered office",
+      "vat": "VAT no.",
+      "register": "Company register",
+      "capital": "Share capital",
+      "pec": "Certified email (PEC)"
+    },
+    "footer": {
+      "claim": "Political intelligence for Europe, built on verifiable data.",
+      "contactTitle": "Contact",
+      "navLabel": "Footer",
+      "platform": "Platform",
+      "polisOverview": "Orthanc Polis",
+      "polisModules": "Polis modules",
+      "trust": "Trust and method",
+      "faq": "Questions and answers",
+      "companyTitle": "Company",
+      "about": "About Orthanc",
+      "milestones": "Milestones",
+      "investors": "Investor overview",
+      "contact": "Contact us",
+      "legal": "Legal",
+      "privacy": "Privacy policy",
+      "cookies": "Cookie policy",
+      "terms": "Terms of use",
+      "accessibility": "Accessibility statement",
+      "noCookies": "This site uses no cookies",
+      "mapData": "Map data: Natural Earth"
+    }
+  },
+  "maps": {
+    "europeAlt": "Dot map of Europe. Italy, where Orthanc Polis is live, is shown in white; other European countries in grey.",
+    "europeCaption": "<span class=\"mono\">Fig. 01</span> White: Orthanc Polis is live (Italy). Grey: other European countries.",
+    "italyAlt": "Dot map of Italy with the 20 regional capitals marked."
+  },
+  "home": {
+    "navTitle": "Home",
+    "meta": {
+      "title": "Orthanc Analytics | Electoral intelligence for Europe",
+      "description": "Orthanc Polis turns election results since 1946, polls and local news into verifiable intelligence for right-wing parties and campaigns across Europe."
+    },
+    "hero": {
+      "eyebrow": "Electoral intelligence · Live in Italy · Built for Europe",
+      "title": "Political intelligence for Europe, built on verifiable data.",
+      "lead": "Orthanc Polis gives right-wing parties, campaigns and political groups one verified view of the electorate, from the national map down to every municipality. We analyse places, not people.",
+      "secondary": "Explore the Polis platform",
+      "tickerPause": "Pause",
+      "tickerPlay": "Play"
+    },
+    "evidence": {
+      "title": "The data behind Orthanc Polis",
+      "items": [
+        {
+          "num": "7,906",
+          "label": "municipalities with election results",
+          "src": "Electio dataset, from Eligendo open data (Ministry of the Interior)"
+        },
+        {
+          "num": "30",
+          "label": "general and European elections, 1946–2024",
+          "src": "Constituent Assembly 1946, 19 Chamber and 10 European elections"
+        },
+        {
+          "num": "3.07M",
+          "label": "result rows, validated before loading",
+          "src": "Orthanc Polis ingest report, 16 July 2026"
+        },
+        {
+          "num": "147",
+          "label": "single-member constituencies projected",
+          "src": "2022 general-election results by constituency"
+        }
+      ]
+    },
+    "problem": {
+      "label": "The problem",
+      "title": "Campaigns decide fast. The evidence is scattered.",
+      "lead": "Every campaign makes the same decisions under pressure: where to go, what to say, which seats to fight for. The facts behind them are spread across decades of files and dozens of sources.",
+      "points": [
+        {
+          "title": "Results are hard to compare",
+          "body": "Nearly eighty years of results sit in ministry archives, municipality by municipality, in formats that don’t line up and with boundaries that changed over time."
+        },
+        {
+          "title": "Signals don’t connect",
+          "body": "Polls, local news and official statistics live in different places and update at different speeds."
+        },
+        {
+          "title": "The US playbook doesn’t fit Europe",
+          "body": "Tools built for American campaigns rely on voter files and individual profiles. In the EU, the GDPR and the rules on political advertising strictly limit that approach."
+        }
+      ],
+      "answer": "Orthanc Polis brings the evidence together in one place, checks it, and shows where every number comes from."
+    },
+    "capabilities": {
+      "label": "Platform",
+      "title": "What Orthanc Polis does",
+      "lead": "Five tools for campaign teams, in one workspace.",
+      "link": "Explore all Orthanc Polis modules",
+      "items": [
+        {
+          "title": "Electoral map",
+          "body": "See every general and European election since 1946 for every municipality, and how each single-member constituency would change with today’s polls."
+        },
+        {
+          "title": "Territorial priorities",
+          "body": "Rank municipalities by how contested they are, how much turnout could be recovered and how many voters they hold. Built only from public aggregate data."
+        },
+        {
+          "title": "Media monitoring",
+          "body": "Follow regional and local news in one feed. AI drafts a summary of the main issues; each claim is checked against the source articles and labelled as AI-generated."
+        },
+        {
+          "title": "Scenarios and seat simulation",
+          "body": "Enter your own vote shares and see the seat outcome under the current electoral law. A simulation of the ‘Stabilicum’ reform is included and labelled as not in force."
+        },
+        {
+          "title": "Audit and data quality",
+          "body": "Every dataset carries its source, a checksum and a freshness date. New results are approved by a person before they enter the verified record."
+        }
+      ]
+    },
+    "method": {
+      "label": "Method",
+      "title": "No fabricated data.",
+      "lead": "If a source is unavailable, Orthanc Polis says so and leaves the chart empty. It never fills the gap with estimates presented as facts.",
+      "link": "Read how Orthanc Polis verifies its data",
+      "tenets": [
+        {
+          "title": "Provenance on every number",
+          "body": "Each dataset records where it came from, which version was loaded and when."
+        },
+        {
+          "title": "Validation before loading",
+          "body": "Historical results must pass four validation gates against official figures. If one fails, nothing is loaded."
+        },
+        {
+          "title": "A person approves new data",
+          "body": "Automation proposes new results; an administrator approves them before they join the verified record."
+        },
+        {
+          "title": "AI that shows its work",
+          "body": "AI output is labelled as such. A second pass checks each claim against the sources and removes anything they don’t support."
+        }
+      ]
+    },
+    "europe": {
+      "label": "Who it’s for",
+      "title": "Live in Italy. Built for Europe.",
+      "lead": "Orthanc Polis runs today on Italian data, from every municipality to every constituency. Its foundations (source provenance, validation, human approval and aggregate-only analysis) are designed to carry over to other European countries.",
+      "audienceTitle": "Built for right-wing parties, campaigns and political groups",
+      "audience": [
+        {
+          "title": "Party headquarters",
+          "body": "Strategy and data offices planning national and regional campaigns."
+        },
+        {
+          "title": "Campaign teams",
+          "body": "Managers deciding where to send candidates, volunteers and budget."
+        },
+        {
+          "title": "Elected officials",
+          "body": "Representatives and their staff, following their territory between elections."
+        },
+        {
+          "title": "Foundations and think tanks",
+          "body": "Research teams that need historical results they can cite."
+        }
+      ],
+      "note": "Working in another European country?",
+      "noteLink": "Tell us about your market"
+    },
+    "platforms": {
+      "label": "Platforms",
+      "title": "The Orthanc platforms",
+      "lead": "One method across three products, from the national map to the city council.",
+      "polis": {
+        "tag": "Live",
+        "body": "Electoral intelligence for national and regional campaigns: results since 1946, constituency projections, territorial priorities, media monitoring and a full audit trail.",
+        "link": "Explore the Orthanc Polis platform",
+        "alt": "Dot map of Italy, where Orthanc Polis is live."
+      },
+      "solo": {
+        "tag": "Mobile",
+        "body": "Mobile-first intelligence for municipal campaigns and city administrations: neighbourhood-level insight, demographic breakdowns and live monitoring of local elections.",
+        "link": "Ask us about Orthanc Solo",
+        "alt": "Illustrative concept screen of Orthanc Solo: a municipal results dashboard with a district map."
+      },
+      "logos": {
+        "tag": "Coming soon",
+        "body": "The next Orthanc platform: AI-assisted analysis of political language, debate and policy.",
+        "link": "Join the Orthanc Logos waiting list",
+        "mailSubject": "Orthanc Logos: waiting list",
+        "alt": "Orthanc Logos teaser: a network of connected points in the shape of a brain."
+      }
+    },
+    "investorBand": {
+      "label": "Investors",
+      "title": "Why Orthanc, why now.",
+      "body": "The problem we solve, the product, the milestones so far and how to request access to the data room.",
+      "link": "Read the investor overview"
+    }
+  },
+  "polis": {
+    "navTitle": "Orthanc Polis",
+    "meta": {
+      "title": "Orthanc Polis | Electoral intelligence platform for Italy",
+      "description": "Election results since 1946 for every Italian municipality, constituency projections, territorial priorities and media monitoring, with a full audit trail.",
+      "category": "Electoral intelligence"
+    },
+    "hero": {
+      "eyebrow": "Orthanc Polis · Electoral intelligence platform",
+      "title": "Italy’s electoral map, constituency by constituency, municipality by municipality.",
+      "lead": "Orthanc Polis brings official election results, polls, local news and ISTAT statistics into one workspace, and shows where every number comes from.",
+      "secondary": "Browse the modules"
+    },
+    "console": {
+      "schematic": "Schematic",
+      "mapAlt": "Dot map of Italy with the 20 regional capitals marked.",
+      "caption": "<span class=\"mono\">Fig. 01</span> Schematic of the Orthanc Polis workspace. The 20 points mark the regional capitals, each with a hand-verified archive of municipal elections."
+    },
+    "data": {
+      "title": "The data foundation",
+      "items": [
+        {
+          "num": "7,906",
+          "label": "municipalities with election results",
+          "src": "Electio dataset, from Eligendo open data (Ministry of the Interior)"
+        },
+        {
+          "num": "30",
+          "label": "general and European elections, 1946–2024",
+          "src": "Constituent Assembly 1946, 19 Chamber and 10 European elections"
+        },
+        {
+          "num": "3.07M",
+          "label": "result rows, validated before loading",
+          "src": "Orthanc Polis ingest report, 16 July 2026"
+        },
+        {
+          "num": "147",
+          "label": "single-member constituencies projected",
+          "src": "2022 general-election results by constituency"
+        },
+        {
+          "num": "4",
+          "label": "validation gates against official results",
+          "src": "Electio manifest: a failed gate stops the load"
+        },
+        {
+          "num": "66",
+          "label": "automated checks on the seat-simulation engine",
+          "src": "Orthanc Polis test suite, all passing (October 2026)"
+        }
+      ]
+    },
+    "modules": {
+      "label": "Modules",
+      "title": "Seven modules, one verified record",
+      "lead": "Every module reads from the same checked data, so the map, the projections and the reports start from the same facts.",
+      "tablistLabel": "Orthanc Polis modules",
+      "dataLabel": "Data",
+      "schematicLabel": "Schematic, not real data",
+      "items": [
+        {
+          "id": "dashboard",
+          "name": "Dashboard",
+          "gloss": "Constituency overview",
+          "body": [
+            "Projects all 147 single-member constituencies from the 2022 result onto current polls, applying the national change evenly to every constituency (uniform swing).",
+            "Shows which seats would change hands, region by region, with a 2018–2022 comparison and the vote of Italians abroad."
+          ],
+          "points": [],
+          "data": "2022 results by constituency · national poll averages · voters abroad (AIRE)"
+        },
+        {
+          "id": "territorial",
+          "name": "Analisi Territoriale",
+          "gloss": "Territorial analysis",
+          "body": [
+            "Five views of the same territory, from the national picture to a single town."
+          ],
+          "points": [
+            "<strong>National:</strong> constituencies grouped as changing hands, too close to call (under 3 points) or safe.",
+            "<strong>Regional:</strong> regional election results and the 2018–2022 swing, with new results approved by a person.",
+            "<strong>Municipal:</strong> the 20 regional capitals, with hand-verified local election archives, national and European results, and ISTAT data.",
+            "<strong>History 1946–2024:</strong> general and European results for every municipality.",
+            "<strong>Territorial scores:</strong> how contested each municipality is, how much turnout could be recovered and how many voters it holds, combined into a priority score."
+          ],
+          "data": "Electio (Eligendo) · ISTAT SITUAS · hand-verified municipal archive"
+        },
+        {
+          "id": "media",
+          "name": "Media Monitoring",
+          "gloss": "News and video monitoring",
+          "body": [
+            "Regional and local news in one feed. AI drafts a summary of the main issues; a second pass checks each claim against the source articles and removes anything unsupported.",
+            "A YouTube monitor follows channel activity, mention volume and comment themes."
+          ],
+          "points": [],
+          "data": "Google News feeds, refreshed every 12 hours · YouTube Data API"
+        },
+        {
+          "id": "trends",
+          "name": "Clima e Tendenze",
+          "gloss": "Climate and trends",
+          "body": [
+            "Poll trends compared with the 2022 result, how often each issue appears in local news over the last seven days, and official ISTAT series for inflation, unemployment and consumer confidence.",
+            "If ISTAT can’t be reached, the charts stay empty and say so."
+          ],
+          "points": [],
+          "data": "Poll averages · local news · ISTAT statistics"
+        },
+        {
+          "id": "scenarios",
+          "name": "Scenari",
+          "gloss": "Seat simulation",
+          "body": [
+            "Enter your own vote shares and see the seat outcome under the current electoral law (the Rosatellum). Save scenarios and compare them.",
+            "A simulation of the ‘Stabilicum’ reform is included. Until the reform is in force it is always labelled as a preview, with parameters taken from press reports of the approved text."
+          ],
+          "points": [],
+          "data": "Your assumptions · 2022 results · seat-allocation rules"
+        },
+        {
+          "id": "calendar",
+          "name": "Calendario",
+          "gloss": "Election calendar",
+          "body": [
+            "Past elections and the expected windows for upcoming ones, calculated from the length of each term and clearly marked as projected."
+          ],
+          "points": [],
+          "data": "Official election dates · term lengths"
+        },
+        {
+          "id": "audit",
+          "name": "Audit & Qualità AI",
+          "gloss": "Audit and AI quality",
+          "body": [
+            "SHA-256 checksums for every dataset, a validation log, a log of every AI request with its verification results, and an approval queue for poll and leader-rating updates.",
+            "Sources are ranked in four tiers of reliability, so analysts know how much weight each one carries."
+          ],
+          "points": [],
+          "data": "Dataset checksums · validation and AI logs · approval queue"
+        }
+      ]
+    },
+    "pipeline": {
+      "label": "How it works",
+      "title": "From source to decision",
+      "lead": "Data moves through the same five steps every time, and each step leaves a record.",
+      "steps": [
+        {
+          "label": "Sources",
+          "title": "Official first",
+          "items": [
+            "Election results (Eligendo, Ministry of the Interior)",
+            "ISTAT territorial register (SITUAS)",
+            "ISTAT statistics",
+            "Regional and local news",
+            "YouTube",
+            "Poll averages"
+          ]
+        },
+        {
+          "label": "Checks",
+          "title": "Validated",
+          "items": [
+            "SHA-256 checksums",
+            "Four validation gates",
+            "Human approval of new results"
+          ]
+        },
+        {
+          "label": "Warehouse",
+          "title": "One record",
+          "items": [
+            "Origin, version and checksum of every source",
+            "Freshness dates",
+            "Status check for each source"
+          ]
+        },
+        {
+          "label": "Modules",
+          "title": "One workspace",
+          "items": [
+            "Dashboard and territorial analysis",
+            "Media and trends",
+            "Scenarios and calendar"
+          ]
+        },
+        {
+          "label": "Output",
+          "title": "Labelled reports",
+          "items": [
+            "PDF export",
+            "Each section labelled by layer",
+            "Snapshot date and checksums"
+          ]
+        }
+      ]
+    },
+    "trust": {
+      "label": "Trust and method",
+      "title": "Every number says what it is.",
+      "lead": "Every section of an Orthanc Polis report carries one of four labels, so nobody mistakes a projection for a result, or an AI summary for a source.",
+      "layers": [
+        {
+          "tag": "L1 · Verified raw data",
+          "body": "Official figures from primary sources, without reworking."
+        },
+        {
+          "tag": "L2 · Deterministic calculation",
+          "body": "Produced by documented, repeatable algorithms on the listed datasets."
+        },
+        {
+          "tag": "L3 · AI synthesis",
+          "body": "Written by an AI model from the sources provided, then checked claim by claim."
+        },
+        {
+          "tag": "User hypothesis",
+          "body": "Values you set for a simulation. Not a measurement."
+        }
+      ],
+      "emptyLabel": "What you see when a source is down",
+      "emptyCaption": "In English: “No cached data. Waiting for the ISTAT connection to be restored.” Orthanc Polis shows an honest empty state instead of inventing numbers.",
+      "points": [
+        {
+          "title": "AI drafts, the sources decide",
+          "body": "Summaries may only use the material they are given. A second pass checks every claim and removes anything the sources don’t support."
+        },
+        {
+          "title": "Places, not people",
+          "body": "Territorial scores use public aggregate data only: no voter-level personal data and no individual profiles."
+        },
+        {
+          "title": "Projections are not polls",
+          "body": "Seat projections and scenarios are model outputs for planning, kept separate from poll data."
+        },
+        {
+          "title": "Checksums you can recompute",
+          "body": "Dataset hashes are real SHA-256 values computed on the files, not decorative numbers."
+        }
+      ]
+    },
+    "security": {
+      "label": "Security and access",
+      "title": "Controlled access, and every change leaves a trace.",
+      "lead": "Orthanc Polis is built for teams handling confidential strategy. Security is checked on the server, not just in the browser.",
+      "items": [
+        {
+          "title": "AI runs on the server only",
+          "body": "AI requests go through our server, which accepts only an approved list of tasks. No keys reach the browser."
+        },
+        {
+          "title": "Fail-closed administration",
+          "body": "Administrator rights are verified on the server for every change. If authentication isn’t configured, write access is refused."
+        },
+        {
+          "title": "Roles and approval",
+          "body": "Administrators and viewers have different rights, and new users must be approved before they get in."
+        },
+        {
+          "title": "Logs that persist",
+          "body": "AI requests and data events are logged and kept across restarts, with a backup copy of key records."
+        },
+        {
+          "title": "Privacy by design",
+          "body": "Territorial analysis uses public aggregates only, designed with the GDPR and Regulation (EU) 2024/900 on political advertising in mind."
+        }
+      ]
+    },
+    "roadmap": {
+      "label": "In development",
+      "title": "What’s next",
+      "lead": "Not live yet. We list it so you know exactly what is available today.",
+      "tag": "Not yet live",
+      "items": [
+        "Social listening for X, Instagram and TikTok",
+        "Search-trend signals (Google Trends)",
+        "Data for further European countries"
+      ]
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Questions campaign teams ask",
+      "lead": "Short answers. Ask us for the detail.",
+      "link": "Ask us a question about Orthanc Polis",
+      "items": [
+        {
+          "q": "Where does the data come from?",
+          "a": "Official sources first: election results by municipality from the Ministry of the Interior’s open data (Eligendo, via the Electio dataset), and ISTAT’s territorial register and statistics. Then poll averages, regional and local news, and YouTube. Every dataset records its source and when it was loaded."
+        },
+        {
+          "q": "Do you use personal data or build voter profiles?",
+          "a": "No. Orthanc Polis analyses places, not people. Territorial analysis uses public aggregate data only; we don’t build voter files or individual profiles."
+        },
+        {
+          "q": "Which countries do you cover?",
+          "a": "Italy is live today, down to every municipality. The platform is designed for other European countries: if you work elsewhere in Europe, tell us about your market."
+        },
+        {
+          "q": "How do you stop the AI from making things up?",
+          "a": "AI output is always labelled as AI synthesis. It may only use the sources provided, and a second pass checks each claim against them and removes anything unsupported. Numbers come from the datasets, never from the AI."
+        },
+        {
+          "q": "Are projections the same as polls?",
+          "a": "No. Projections and scenarios are model outputs for planning. They are kept separate from poll data and labelled as calculations or user hypotheses."
+        },
+        {
+          "q": "Is the ‘Stabilicum’ reform in force?",
+          "a": "Not as of 6 October 2026. The reform passed the Chamber of Deputies in July 2026 and the Senate in September 2026, and awaits its final vote in the Chamber. Orthanc Polis includes a simulation labelled as not in force, with parameters from press reports of the approved text, to be checked against the text published in the Gazzetta Ufficiale."
+        },
+        {
+          "q": "Can we export reports?",
+          "a": "Yes. Most views export to PDF, with each section labelled by layer, the date of the data snapshot and the dataset checksums."
+        },
+        {
+          "q": "Who can see our workspace?",
+          "a": "Only users you approve. Administrators and viewers have different rights, and administrative actions are verified on the server."
+        },
+        {
+          "q": "How do we get a demo?",
+          "a": "Write to us with your organisation, region and next election, and we’ll arrange a demo built around your territory."
+        }
+      ]
+    }
+  },
+  "investors": {
+    "navTitle": "Investors",
+    "meta": {
+      "title": "Investors | Orthanc Analytics",
+      "description": "Why Orthanc, why now: the problem, the product, our milestones and how to request access to the Orthanc Analytics data room."
+    },
+    "hero": {
+      "eyebrow": "Investor overview",
+      "title": "Verified political intelligence, built for Europe’s rules.",
+      "lead": "Orthanc Analytics turns public election data into decisions campaigns can defend. Our first product, Orthanc Polis, is live in Italy and designed for Europe.",
+      "secondary": "Explore the Orthanc Polis platform"
+    },
+    "problem": {
+      "label": "The problem",
+      "title": "European campaigns plan with fragmented evidence.",
+      "lead": "High-stakes decisions, such as where to campaign, which seats to fight for and how to read the polls, still rest on scattered files and gut feeling.",
+      "points": [
+        {
+          "title": "Decades of data, hard to use",
+          "body": "Italy alone has nearly eighty years of results across thousands of municipalities whose boundaries have changed."
+        },
+        {
+          "title": "Signals that don’t connect",
+          "body": "Polls, local news and official statistics sit in separate places and move at different speeds."
+        },
+        {
+          "title": "Rules that close the US playbook",
+          "body": "Since October 2025, EU rules on political advertising strictly limit targeting with personal data. Tools built on voter files fit Europe badly."
+        }
+      ]
+    },
+    "solution": {
+      "label": "The solution",
+      "title": "One verified record, from the national map to every municipality.",
+      "lead": "Orthanc Polis combines official data, projections and monitoring in one workspace, with an audit trail by default.",
+      "link": "Explore the Orthanc Polis platform",
+      "pillars": [
+        {
+          "title": "A verified data foundation",
+          "body": "Every general and European election since 1946 for 7,906 municipalities, loaded only after validation against official results."
+        },
+        {
+          "title": "Decision tools",
+          "body": "Constituency projections, territorial priorities, seat scenarios and media monitoring in one place."
+        },
+        {
+          "title": "Trust built in",
+          "body": "Provenance, checksums, human approval and labelled AI output, designed for the EU’s rules from day one."
+        }
+      ]
+    },
+    "whyNow": {
+      "label": "Why now",
+      "title": "Three dated facts.",
+      "lead": "Italian politics is entering a decisive cycle, under new EU rules.",
+      "checked": "Facts checked on {date}.",
+      "items": [
+        {
+          "when": "By late 2027",
+          "title": "Italy’s next general election",
+          "body": "The current legislature began on 13 October 2022 and ends in autumn 2027, so the next general election is due by late 2027.",
+          "source": "Pagella Politica",
+          "sourceUrl": "https://pagellapolitica.it/articoli/data-incerta-elezioni-politiche-2027"
+        },
+        {
+          "when": "July – October 2026",
+          "title": "A new electoral law",
+          "body": "The ‘Stabilicum’ reform passed the Chamber of Deputies in July 2026 and the Senate in September 2026, and awaits its final vote in the Chamber. A new law means new seat maths for every party.",
+          "source": "Il Post",
+          "sourceUrl": "https://www.ilpost.it/2026/09/15/senato-approvazione-legge-elettorale/"
+        },
+        {
+          "when": "Since 10 October 2025",
+          "title": "EU rules on political ads",
+          "body": "Regulation (EU) 2024/900 sets strict conditions on using personal data to target political advertising. Analysis built on public aggregates, like Orthanc Polis, doesn’t depend on that kind of targeting.",
+          "source": "European Commission",
+          "sourceUrl": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/democracy-eu-citizenship-anti-corruption/democracy-and-electoral-rights/transparency-and-targeting-political-advertising_en"
+        }
+      ]
+    },
+    "traction": {
+      "label": "Traction",
+      "title": "Milestones, with context.",
+      "lead": "What we have built so far, dated and verifiable.",
+      "milestonesTitle": "Product milestones",
+      "commercialNote": "Commercial metrics are shared with investors on request."
+    },
+    "team": {
+      "label": "Team",
+      "title": "Why us, why now.",
+      "lead": "The people building Orthanc."
+    },
+    "model": {
+      "label": "Business",
+      "title": "Business model and funding",
+      "businessModel": "Business model",
+      "round": "Current round"
+    },
+    "dataRoom": {
+      "label": "Due diligence",
+      "title": "Go deeper in the data room.",
+      "body": "This page tells the story. The data room holds the detail for due diligence. Write to us and we’ll arrange access.",
+      "cta": "Request data-room access",
+      "deck": "Download the investor deck",
+      "mailSubject": "Data-room access request: Orthanc Analytics",
+      "mailBody": "Name:\nFund or organisation:\nRole:\nInvestment focus:\n"
+    }
+  },
+  "company": {
+    "navTitle": "Company",
+    "meta": {
+      "title": "Company | Orthanc Analytics",
+      "description": "Who we are and what we believe: verifiable data, places not people, and calm, factual analysis for Europe’s political decision-makers."
+    },
+    "hero": {
+      "eyebrow": "Company",
+      "title": "We build political intelligence that can be checked.",
+      "lead": "Our mission: give Europe’s political decision-makers evidence they can verify."
+    },
+    "principles": {
+      "label": "Principles",
+      "title": "What we believe",
+      "lead": "Four rules shape every product decision.",
+      "items": [
+        {
+          "title": "Verifiable before impressive",
+          "body": "We show the source, the method and the date. If a figure can’t be verified, we don’t show it."
+        },
+        {
+          "title": "Places, not people",
+          "body": "We analyse territories and public aggregates, not individual voters."
+        },
+        {
+          "title": "Honest about uncertainty",
+          "body": "Projections are labelled as projections, bills as bills, and missing data as missing."
+        },
+        {
+          "title": "Built for Europe’s rules",
+          "body": "The GDPR and the EU rules on political advertising shape our products from the start, not as an afterthought."
+        }
+      ]
+    },
+    "europe": {
+      "label": "Where we work",
+      "title": "Live in Italy. Built for Europe.",
+      "lead": "We started in Italy, with nearly eighty years of results to put in order.",
+      "body": [
+        "Orthanc Polis covers Italy today, from the national picture to every municipality.",
+        "Our principles and architecture are designed to carry over to other European countries, for right-wing parties, campaigns and political groups across Europe."
+      ]
+    },
+    "milestones": {
+      "label": "Milestones",
+      "title": "What we’ve built",
+      "lead": "Dated, verifiable progress. We update this list as the product grows."
+    },
+    "team": {
+      "label": "Team",
+      "title": "The people behind Orthanc",
+      "lead": "The people building Orthanc."
+    }
+  },
+  "contact": {
+    "navTitle": "Contact",
+    "meta": {
+      "title": "Contact | Orthanc Analytics",
+      "description": "Request an Orthanc Polis demo, contact investor relations or reach the team. Email, phone and company details."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Talk to Orthanc.",
+      "lead": "Choose the route that fits your request. Each button opens a pre-filled email."
+    },
+    "routesLabel": "Ways to contact us",
+    "includeLabel": "Please include",
+    "routes": [
+      {
+        "id": "demo",
+        "label": "Parties, campaigns and political groups",
+        "title": "Request a Polis demo",
+        "body": "We’ll build the demo around your territory and your next election.",
+        "include": [
+          "Organisation",
+          "Country and region",
+          "Your role",
+          "Next election (type and date)"
+        ],
+        "cta": "Email a demo request",
+        "mailSubject": "Orthanc Polis demo request",
+        "mailBody": "Organisation:\nCountry and region:\nYour role:\nNext election (type and date):\nWhat would you like to see in the demo?\n"
+      },
+      {
+        "id": "investors",
+        "label": "Investors",
+        "title": "Investor relations",
+        "body": "Ask for the investor overview and access to the data room.",
+        "include": [
+          "Name and fund or organisation",
+          "Investment focus"
+        ],
+        "cta": "Email investor relations",
+        "mailSubject": "Investor enquiry: Orthanc Analytics",
+        "mailBody": "Name:\nFund or organisation:\nInvestment focus:\n"
+      },
+      {
+        "id": "press",
+        "label": "Press and everything else",
+        "title": "General enquiries",
+        "body": "Press, partnerships or anything else.",
+        "include": [],
+        "cta": "Email the Orthanc team",
+        "mailSubject": "Enquiry: Orthanc Analytics",
+        "mailBody": ""
+      }
+    ],
+    "mailNote": "Buttons not opening your email app? Write to {email}.",
+    "details": {
+      "title": "Company details",
+      "lead": "Orthanc Analytics, the company behind Orthanc Polis, Solo and Logos."
+    },
+    "privacy": {
+      "title": "Your privacy",
+      "body": "We use what you send us only to reply and, if you ask, to arrange a demo or meeting. Please don’t send sensitive data, such as information about individuals’ political opinions. This site sets no cookies and runs no analytics.",
+      "link": "Read the privacy policy"
+    }
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "updated": "Last updated:",
+    "tocLabel": "On this page",
+    "pecSentence": "Certified email (PEC): {pec}.",
+    "privacy": {
+      "navTitle": "Privacy policy",
+      "title": "Privacy policy",
+      "description": "How Orthanc Analytics processes personal data on this website: hosting logs, emails you send us, and your rights under the GDPR. No analytics, no tracking."
+    },
+    "cookies": {
+      "navTitle": "Cookie policy",
+      "title": "Cookie policy",
+      "description": "This website sets no cookies and stores nothing on your device. What that means, and what would change if that ever changed."
+    },
+    "terms": {
+      "navTitle": "Terms of use",
+      "title": "Terms of use",
+      "description": "The terms for using the Orthanc Analytics website: content, intellectual property, liability and applicable law."
+    },
+    "accessibility": {
+      "navTitle": "Accessibility",
+      "title": "Accessibility statement",
+      "description": "Our commitment to an accessible website: the standard we follow (WCAG 2.1 AA), what we have done, known limitations and how to give feedback."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you are looking for doesn’t exist or has moved.",
+    "home": "Go to the Orthanc Analytics home page"
+  }
+}

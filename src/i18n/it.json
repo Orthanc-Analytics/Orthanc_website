@@ -1,0 +1,827 @@
+{
+  "meta": {
+    "locale": "it_IT",
+    "langName": "Italiano"
+  },
+  "common": {
+    "skip": "Vai al contenuto",
+    "brandSub": "Analytics",
+    "homeLabel": "Orthanc Analytics, pagina iniziale",
+    "langSwitch": "Lingua",
+    "placeholder": "[DA COMPLETARE]",
+    "sourceLabel": "Fonte",
+    "breadcrumbHome": "Home",
+    "breadcrumbLabel": "Percorso",
+    "ogAlt": "Orthanc Analytics: intelligence politica per l’Europa, fondata su dati verificabili.",
+    "linkedinOf": "{name} su LinkedIn",
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X"
+    },
+    "nav": {
+      "label": "Principale",
+      "polis": "Piattaforma Polis",
+      "investors": "Investitori",
+      "company": "Azienda",
+      "contact": "Contatti",
+      "menu": "Menu",
+      "close": "Chiudi"
+    },
+    "cta": {
+      "demo": "Richiedi una demo",
+      "demoPolis": "Richiedi una demo di Polis",
+      "demoShort": "Demo"
+    },
+    "ctaBand": {
+      "label": "Demo",
+      "title": "Guarda il tuo territorio in Orthanc Polis.",
+      "body": "Indicaci la tua regione e la tua prossima elezione: costruiremo la demo su misura."
+    },
+    "contact": {
+      "email": "Email",
+      "phone": "Telefono",
+      "office": "Sede legale",
+      "vat": "P. IVA",
+      "register": "Registro delle imprese",
+      "capital": "Capitale sociale",
+      "pec": "PEC"
+    },
+    "footer": {
+      "claim": "Intelligence politica per l’Europa, fondata su dati verificabili.",
+      "contactTitle": "Contatti",
+      "navLabel": "Piè di pagina",
+      "platform": "Piattaforma",
+      "polisOverview": "Orthanc Polis",
+      "polisModules": "Moduli di Polis",
+      "trust": "Fiducia e metodo",
+      "faq": "Domande e risposte",
+      "companyTitle": "Azienda",
+      "about": "Chi siamo",
+      "milestones": "Traguardi",
+      "investors": "Presentazione per investitori",
+      "contact": "Contattaci",
+      "legal": "Note legali",
+      "privacy": "Informativa privacy",
+      "cookies": "Informativa sui cookie",
+      "terms": "Condizioni d’uso",
+      "accessibility": "Dichiarazione di accessibilità",
+      "noCookies": "Questo sito non usa cookie",
+      "mapData": "Dati cartografici: Natural Earth"
+    }
+  },
+  "maps": {
+    "europeAlt": "Mappa a punti dell’Europa. L’Italia, dove Orthanc Polis è attivo, è in bianco; gli altri paesi europei in grigio.",
+    "europeCaption": "<span class=\"mono\">Fig. 01</span> Bianco: Orthanc Polis è attivo (Italia). Grigio: altri paesi europei.",
+    "italyAlt": "Mappa a punti dell’Italia con i 20 capoluoghi di regione."
+  },
+  "home": {
+    "navTitle": "Home",
+    "meta": {
+      "title": "Orthanc Analytics | Intelligence elettorale per l’Europa",
+      "description": "Orthanc Polis trasforma i risultati elettorali dal 1946, i sondaggi e le notizie locali in intelligence verificabile per partiti e campagne di destra in tutta Europa."
+    },
+    "hero": {
+      "eyebrow": "Intelligence elettorale · Attivo in Italia · Progettato per l’Europa",
+      "title": "Intelligence politica per l’Europa, fondata su dati verificabili.",
+      "lead": "Orthanc Polis offre a partiti, campagne e gruppi politici di destra una visione unica e verificata dell’elettorato, dalla mappa nazionale fino a ogni comune. Analizziamo territori, non persone.",
+      "secondary": "Esplora la piattaforma Polis",
+      "tickerPause": "Pausa",
+      "tickerPlay": "Riproduci"
+    },
+    "evidence": {
+      "title": "I dati alla base di Orthanc Polis",
+      "items": [
+        {
+          "num": "7.906",
+          "label": "comuni con risultati elettorali",
+          "src": "Dataset Electio, da open data Eligendo (Ministero dell’Interno)"
+        },
+        {
+          "num": "30",
+          "label": "elezioni politiche ed europee, 1946–2024",
+          "src": "Assemblea Costituente 1946, 19 elezioni della Camera e 10 europee"
+        },
+        {
+          "num": "3,07 mln",
+          "label": "righe di risultati, validate prima del caricamento",
+          "src": "Report di ingestione di Orthanc Polis, 16 luglio 2026"
+        },
+        {
+          "num": "147",
+          "label": "collegi uninominali proiettati",
+          "src": "Risultati delle politiche 2022 per collegio"
+        }
+      ]
+    },
+    "problem": {
+      "label": "Il problema",
+      "title": "Le campagne decidono in fretta. I dati sono dispersi.",
+      "lead": "Ogni campagna prende le stesse decisioni sotto pressione: dove andare, cosa dire, quali collegi contendere. I fatti che servono sono sparsi in decenni di archivi e decine di fonti.",
+      "points": [
+        {
+          "title": "Risultati difficili da confrontare",
+          "body": "Quasi ottant’anni di risultati sono negli archivi ministeriali, comune per comune, in formati che non combaciano e con confini cambiati nel tempo."
+        },
+        {
+          "title": "Segnali che non si parlano",
+          "body": "Sondaggi, notizie locali e statistiche ufficiali stanno in luoghi diversi e si aggiornano a velocità diverse."
+        },
+        {
+          "title": "Il modello americano non funziona in Europa",
+          "body": "Gli strumenti nati per le campagne americane si basano su liste di elettori e profili individuali. Nell’UE, il GDPR e le norme sulla pubblicità politica limitano fortemente questo approccio."
+        }
+      ],
+      "answer": "Orthanc Polis riunisce i dati in un unico luogo, li verifica e mostra da dove viene ogni numero."
+    },
+    "capabilities": {
+      "label": "Piattaforma",
+      "title": "Cosa fa Orthanc Polis",
+      "lead": "Cinque strumenti per le squadre di campagna, in un unico spazio di lavoro.",
+      "link": "Esplora tutti i moduli di Orthanc Polis",
+      "items": [
+        {
+          "title": "Mappa elettorale",
+          "body": "Consulta tutte le elezioni politiche ed europee dal 1946 per ogni comune e scopri come cambierebbe ogni collegio uninominale con i sondaggi di oggi."
+        },
+        {
+          "title": "Priorità territoriali",
+          "body": "Ordina i comuni per contendibilità, potenziale di recupero dell’affluenza e peso elettorale. Solo con dati aggregati pubblici."
+        },
+        {
+          "title": "Monitoraggio media",
+          "body": "Segui la stampa regionale e locale in un unico flusso. L’AI scrive una sintesi dei temi principali; ogni affermazione viene verificata sugli articoli di origine ed è etichettata come generata dall’AI."
+        },
+        {
+          "title": "Scenari e simulazione dei seggi",
+          "body": "Inserisci le tue percentuali e vedi la ripartizione dei seggi con la legge elettorale vigente. È inclusa una simulazione della riforma «Stabilicum», indicata come non in vigore."
+        },
+        {
+          "title": "Audit e qualità dei dati",
+          "body": "Ogni dataset riporta la fonte, un checksum e la data di aggiornamento. I nuovi risultati vengono approvati da una persona prima di entrare nell’archivio verificato."
+        }
+      ]
+    },
+    "method": {
+      "label": "Metodo",
+      "title": "Nessun dato inventato.",
+      "lead": "Se una fonte non è disponibile, Orthanc Polis lo dice e lascia il grafico vuoto. Non riempie mai il vuoto con stime presentate come fatti.",
+      "link": "Scopri come Orthanc Polis verifica i dati",
+      "tenets": [
+        {
+          "title": "Provenienza per ogni numero",
+          "body": "Ogni dataset registra da dove viene, quale versione è stata caricata e quando."
+        },
+        {
+          "title": "Validazione prima del caricamento",
+          "body": "I risultati storici devono superare quattro controlli di validazione rispetto ai dati ufficiali. Se uno fallisce, non si carica nulla."
+        },
+        {
+          "title": "Una persona approva i nuovi dati",
+          "body": "L’automazione propone i nuovi risultati; un amministratore li approva prima che entrino nell’archivio verificato."
+        },
+        {
+          "title": "AI che mostra il proprio lavoro",
+          "body": "I contenuti dell’AI sono etichettati come tali. Un secondo passaggio verifica ogni affermazione sulle fonti e rimuove ciò che le fonti non confermano."
+        }
+      ]
+    },
+    "europe": {
+      "label": "Per chi è",
+      "title": "Attivo in Italia. Progettato per l’Europa.",
+      "lead": "Oggi Orthanc Polis lavora sui dati italiani, da ogni comune a ogni collegio. Le sue fondamenta (provenienza delle fonti, validazione, approvazione umana e analisi solo su dati aggregati) sono pensate per essere estese ad altri paesi europei.",
+      "audienceTitle": "Pensato per partiti, campagne e gruppi politici di destra",
+      "audience": [
+        {
+          "title": "Sedi di partito",
+          "body": "Uffici strategia e dati che pianificano campagne nazionali e regionali."
+        },
+        {
+          "title": "Squadre di campagna",
+          "body": "Responsabili che decidono dove mandare candidati, volontari e budget."
+        },
+        {
+          "title": "Eletti",
+          "body": "Parlamentari, consiglieri e i loro staff, che seguono il territorio tra un’elezione e l’altra."
+        },
+        {
+          "title": "Fondazioni e think tank",
+          "body": "Centri studi che hanno bisogno di risultati storici citabili."
+        }
+      ],
+      "note": "Lavori in un altro paese europeo?",
+      "noteLink": "Raccontaci il tuo mercato"
+    },
+    "platforms": {
+      "label": "Piattaforme",
+      "title": "Le piattaforme Orthanc",
+      "lead": "Un unico metodo per tre prodotti, dalla mappa nazionale al consiglio comunale.",
+      "polis": {
+        "tag": "Attivo",
+        "body": "Intelligence elettorale per campagne nazionali e regionali: risultati dal 1946, proiezioni per collegio, priorità territoriali, monitoraggio media e tracciabilità completa.",
+        "link": "Esplora la piattaforma Orthanc Polis",
+        "alt": "Mappa a punti dell’Italia, dove Orthanc Polis è attivo."
+      },
+      "solo": {
+        "tag": "Mobile",
+        "body": "Intelligence mobile-first per le campagne comunali e le amministrazioni cittadine: analisi per quartiere, dati demografici e monitoraggio in tempo reale delle elezioni locali.",
+        "link": "Chiedici di Orthanc Solo",
+        "alt": "Schermata illustrativa di Orthanc Solo: una dashboard dei risultati comunali con la mappa dei quartieri."
+      },
+      "logos": {
+        "tag": "In arrivo",
+        "body": "La prossima piattaforma Orthanc: analisi del linguaggio politico, del dibattito e delle politiche pubbliche con il supporto dell’AI.",
+        "link": "Iscriviti alla lista d’attesa di Orthanc Logos",
+        "mailSubject": "Orthanc Logos: lista d’attesa",
+        "alt": "Anteprima di Orthanc Logos: una rete di punti collegati a forma di cervello."
+      }
+    },
+    "investorBand": {
+      "label": "Investitori",
+      "title": "Perché Orthanc, perché ora.",
+      "body": "Il problema che risolviamo, il prodotto, i traguardi raggiunti e come richiedere l’accesso alla data room.",
+      "link": "Leggi la presentazione per investitori"
+    }
+  },
+  "polis": {
+    "navTitle": "Orthanc Polis",
+    "meta": {
+      "title": "Orthanc Polis | Piattaforma di intelligence elettorale per l’Italia",
+      "description": "Risultati elettorali dal 1946 per ogni comune italiano, proiezioni per collegio, priorità territoriali e monitoraggio media, con tracciabilità completa.",
+      "category": "Intelligence elettorale"
+    },
+    "hero": {
+      "eyebrow": "Orthanc Polis · Piattaforma di intelligence elettorale",
+      "title": "La mappa elettorale d’Italia, collegio per collegio, comune per comune.",
+      "lead": "Orthanc Polis riunisce risultati elettorali ufficiali, sondaggi, notizie locali e statistiche ISTAT in un unico spazio di lavoro, e mostra da dove viene ogni numero.",
+      "secondary": "Sfoglia i moduli"
+    },
+    "console": {
+      "schematic": "Schema",
+      "mapAlt": "Mappa a punti dell’Italia con i 20 capoluoghi di regione.",
+      "caption": "<span class=\"mono\">Fig. 01</span> Schema dello spazio di lavoro di Orthanc Polis. I 20 punti indicano i capoluoghi di regione, ciascuno con un archivio delle elezioni comunali verificato a mano."
+    },
+    "data": {
+      "title": "Le fondamenta dei dati",
+      "items": [
+        {
+          "num": "7.906",
+          "label": "comuni con risultati elettorali",
+          "src": "Dataset Electio, da open data Eligendo (Ministero dell’Interno)"
+        },
+        {
+          "num": "30",
+          "label": "elezioni politiche ed europee, 1946–2024",
+          "src": "Assemblea Costituente 1946, 19 elezioni della Camera e 10 europee"
+        },
+        {
+          "num": "3,07 mln",
+          "label": "righe di risultati, validate prima del caricamento",
+          "src": "Report di ingestione di Orthanc Polis, 16 luglio 2026"
+        },
+        {
+          "num": "147",
+          "label": "collegi uninominali proiettati",
+          "src": "Risultati delle politiche 2022 per collegio"
+        },
+        {
+          "num": "4",
+          "label": "controlli di validazione sui risultati ufficiali",
+          "src": "Manifest Electio: se un controllo fallisce, il caricamento si ferma"
+        },
+        {
+          "num": "66",
+          "label": "verifiche automatiche sul motore di simulazione dei seggi",
+          "src": "Suite di test di Orthanc Polis, tutte superate (ottobre 2026)"
+        }
+      ]
+    },
+    "modules": {
+      "label": "Moduli",
+      "title": "Sette moduli, un unico archivio verificato",
+      "lead": "Ogni modulo legge gli stessi dati verificati: mappa, proiezioni e report partono dagli stessi fatti.",
+      "tablistLabel": "Moduli di Orthanc Polis",
+      "dataLabel": "Dati",
+      "schematicLabel": "Schema, non dati reali",
+      "items": [
+        {
+          "id": "dashboard",
+          "name": "Dashboard",
+          "gloss": "Panoramica dei collegi",
+          "body": [
+            "Proietta tutti i 147 collegi uninominali dal risultato 2022 sui sondaggi attuali, applicando la variazione nazionale in modo uniforme a ogni collegio (swing uniforme).",
+            "Mostra quali seggi cambierebbero di mano, regione per regione, con il confronto 2018–2022 e il voto degli italiani all’estero."
+          ],
+          "points": [],
+          "data": "Risultati 2022 per collegio · medie dei sondaggi nazionali · italiani all’estero (AIRE)"
+        },
+        {
+          "id": "territorial",
+          "name": "Analisi Territoriale",
+          "gloss": "Analisi del territorio",
+          "body": [
+            "Cinque viste dello stesso territorio, dal quadro nazionale al singolo comune."
+          ],
+          "points": [
+            "<strong>Nazionale:</strong> collegi divisi tra ribaltati, in bilico (sotto i 3 punti) e consolidati.",
+            "<strong>Regionale:</strong> risultati delle elezioni regionali e swing 2018–2022, con i nuovi risultati approvati da una persona.",
+            "<strong>Comunale:</strong> i 20 capoluoghi di regione, con archivi delle elezioni comunali verificati a mano, risultati politici ed europei e dati ISTAT.",
+            "<strong>Storico 1946–2024:</strong> risultati politici ed europei per ogni comune.",
+            "<strong>Punteggi territoriali:</strong> contendibilità di ogni comune, potenziale di recupero dell’affluenza e peso elettorale, combinati in un punteggio di priorità."
+          ],
+          "data": "Electio (Eligendo) · ISTAT SITUAS · archivio comunale verificato a mano"
+        },
+        {
+          "id": "media",
+          "name": "Media Monitoring",
+          "gloss": "Monitoraggio di notizie e video",
+          "body": [
+            "La stampa regionale e locale in un unico flusso. L’AI scrive una sintesi dei temi principali; un secondo passaggio verifica ogni affermazione sugli articoli di origine e rimuove ciò che non è confermato.",
+            "Un monitor YouTube segue l’attività dei canali, il volume delle menzioni e i temi dei commenti."
+          ],
+          "points": [],
+          "data": "Feed Google News, aggiornati ogni 12 ore · YouTube Data API"
+        },
+        {
+          "id": "trends",
+          "name": "Clima e Tendenze",
+          "gloss": "Sondaggi, temi e indicatori",
+          "body": [
+            "L’andamento dei sondaggi rispetto al risultato 2022, la frequenza di ogni tema nelle notizie locali degli ultimi sette giorni e le serie ufficiali ISTAT su inflazione, disoccupazione e fiducia dei consumatori.",
+            "Se l’ISTAT non è raggiungibile, i grafici restano vuoti e lo dicono."
+          ],
+          "points": [],
+          "data": "Medie dei sondaggi · notizie locali · statistiche ISTAT"
+        },
+        {
+          "id": "scenarios",
+          "name": "Scenari",
+          "gloss": "Simulazione dei seggi",
+          "body": [
+            "Inserisci le tue percentuali e vedi la ripartizione dei seggi con la legge elettorale vigente (Rosatellum). Salva gli scenari e confrontali.",
+            "È inclusa una simulazione della riforma «Stabilicum». Finché la riforma non sarà in vigore, è sempre indicata come anteprima, con parametri tratti dai resoconti di stampa del testo approvato."
+          ],
+          "points": [],
+          "data": "Le tue ipotesi · risultati 2022 · regole di assegnazione dei seggi"
+        },
+        {
+          "id": "calendar",
+          "name": "Calendario",
+          "gloss": "Calendario elettorale",
+          "body": [
+            "Le elezioni passate e le finestre previste per le prossime, calcolate dalla durata di ogni mandato e chiaramente indicate come previsioni."
+          ],
+          "points": [],
+          "data": "Date ufficiali delle elezioni · durata dei mandati"
+        },
+        {
+          "id": "audit",
+          "name": "Audit & Qualità AI",
+          "gloss": "Audit e qualità dell’AI",
+          "body": [
+            "Checksum SHA-256 per ogni dataset, un registro delle validazioni, un registro di ogni richiesta all’AI con i relativi esiti di verifica e una coda di approvazione per gli aggiornamenti di sondaggi e gradimento dei leader.",
+            "Le fonti sono classificate in quattro livelli di affidabilità, così gli analisti sanno quanto peso dare a ciascuna."
+          ],
+          "points": [],
+          "data": "Checksum dei dataset · registri di validazione e AI · coda di approvazione"
+        }
+      ]
+    },
+    "pipeline": {
+      "label": "Come funziona",
+      "title": "Dalla fonte alla decisione",
+      "lead": "I dati attraversano sempre gli stessi cinque passaggi, e ogni passaggio lascia una traccia.",
+      "steps": [
+        {
+          "label": "Fonti",
+          "title": "Prima le fonti ufficiali",
+          "items": [
+            "Risultati elettorali (Eligendo, Ministero dell’Interno)",
+            "Registro territoriale ISTAT (SITUAS)",
+            "Statistiche ISTAT",
+            "Notizie regionali e locali",
+            "YouTube",
+            "Medie dei sondaggi"
+          ]
+        },
+        {
+          "label": "Controlli",
+          "title": "Validati",
+          "items": [
+            "Checksum SHA-256",
+            "Quattro controlli di validazione",
+            "Approvazione umana dei nuovi risultati"
+          ]
+        },
+        {
+          "label": "Archivio",
+          "title": "Un unico registro",
+          "items": [
+            "Origine, versione e checksum di ogni fonte",
+            "Date di aggiornamento",
+            "Controllo di stato per ogni fonte"
+          ]
+        },
+        {
+          "label": "Moduli",
+          "title": "Un unico spazio di lavoro",
+          "items": [
+            "Dashboard e analisi territoriale",
+            "Media e tendenze",
+            "Scenari e calendario"
+          ]
+        },
+        {
+          "label": "Output",
+          "title": "Report etichettati",
+          "items": [
+            "Esportazione in PDF",
+            "Ogni sezione etichettata per livello",
+            "Data dello snapshot e checksum"
+          ]
+        }
+      ]
+    },
+    "trust": {
+      "label": "Fiducia e metodo",
+      "title": "Ogni numero dichiara cosa è.",
+      "lead": "Ogni sezione di un report di Orthanc Polis porta una di quattro etichette, così nessuno scambia una proiezione per un risultato, o una sintesi AI per una fonte.",
+      "layers": [
+        {
+          "tag": "L1 · Dato grezzo verificato",
+          "body": "Dati ufficiali dalle fonti primarie, senza rielaborazione."
+        },
+        {
+          "tag": "L2 · Calcolo deterministico",
+          "body": "Prodotto da algoritmi documentati e ripetibili sui dataset indicati."
+        },
+        {
+          "tag": "L3 · Sintesi AI",
+          "body": "Scritta da un modello di AI a partire dalle fonti fornite, poi verificata affermazione per affermazione."
+        },
+        {
+          "tag": "Ipotesi utente",
+          "body": "Valori impostati da te per una simulazione. Non sono una rilevazione."
+        }
+      ],
+      "emptyLabel": "Cosa vedi quando una fonte non risponde",
+      "emptyCaption": "Orthanc Polis mostra uno stato vuoto onesto invece di inventare numeri.",
+      "points": [
+        {
+          "title": "L’AI scrive, le fonti decidono",
+          "body": "Le sintesi possono usare solo il materiale fornito. Un secondo passaggio verifica ogni affermazione e rimuove ciò che le fonti non confermano."
+        },
+        {
+          "title": "Territori, non persone",
+          "body": "I punteggi territoriali usano solo dati aggregati pubblici: nessun dato personale a livello di singolo elettore, nessun profilo individuale."
+        },
+        {
+          "title": "Le proiezioni non sono sondaggi",
+          "body": "Proiezioni dei seggi e scenari sono risultati di modelli per la pianificazione, tenuti separati dai dati dei sondaggi."
+        },
+        {
+          "title": "Checksum ricalcolabili",
+          "body": "Gli hash dei dataset sono veri valori SHA-256 calcolati sui file, non numeri decorativi."
+        }
+      ]
+    },
+    "security": {
+      "label": "Sicurezza e accessi",
+      "title": "Accessi controllati, e ogni modifica lascia traccia.",
+      "lead": "Orthanc Polis è pensato per squadre che gestiscono strategie riservate. La sicurezza è verificata sul server, non solo nel browser.",
+      "items": [
+        {
+          "title": "AI solo lato server",
+          "body": "Le richieste all’AI passano dal nostro server, che accetta solo un elenco approvato di operazioni. Nessuna chiave arriva al browser."
+        },
+        {
+          "title": "Amministrazione «fail-closed»",
+          "body": "I permessi di amministratore sono verificati sul server a ogni modifica. Se l’autenticazione non è configurata, la scrittura viene rifiutata."
+        },
+        {
+          "title": "Ruoli e approvazione",
+          "body": "Amministratori e lettori hanno permessi diversi, e i nuovi utenti devono essere approvati prima di accedere."
+        },
+        {
+          "title": "Registri persistenti",
+          "body": "Le richieste all’AI e gli eventi sui dati vengono registrati e conservati anche dopo i riavvii, con una copia di backup dei dati principali."
+        },
+        {
+          "title": "Privacy by design",
+          "body": "L’analisi territoriale usa solo dati aggregati pubblici ed è progettata tenendo conto del GDPR e del Regolamento (UE) 2024/900 sulla pubblicità politica."
+        }
+      ]
+    },
+    "roadmap": {
+      "label": "In sviluppo",
+      "title": "Cosa arriva dopo",
+      "lead": "Non ancora attivo. Lo indichiamo perché tu sappia esattamente cosa è disponibile oggi.",
+      "tag": "Non ancora attivo",
+      "items": [
+        "Social listening su X, Instagram e TikTok",
+        "Segnali dalle tendenze di ricerca (Google Trends)",
+        "Dati per altri paesi europei"
+      ]
+    },
+    "faq": {
+      "label": "Domande frequenti",
+      "title": "Le domande delle squadre di campagna",
+      "lead": "Risposte brevi. Per i dettagli, chiedici.",
+      "link": "Facci una domanda su Orthanc Polis",
+      "items": [
+        {
+          "q": "Da dove vengono i dati?",
+          "a": "Prima di tutto da fonti ufficiali: i risultati elettorali per comune dagli open data del Ministero dell’Interno (Eligendo, tramite il dataset Electio), il registro territoriale e le statistiche dell’ISTAT. Poi medie dei sondaggi, notizie regionali e locali e YouTube. Ogni dataset registra la propria fonte e la data di caricamento."
+        },
+        {
+          "q": "Usate dati personali o create profili degli elettori?",
+          "a": "No. Orthanc Polis analizza territori, non persone. L’analisi territoriale usa solo dati aggregati pubblici; non creiamo liste di elettori né profili individuali."
+        },
+        {
+          "q": "Quali paesi coprite?",
+          "a": "Oggi l’Italia, fino a ogni comune. La piattaforma è pensata per altri paesi europei: se lavori altrove in Europa, raccontaci il tuo mercato."
+        },
+        {
+          "q": "Come evitate che l’AI inventi?",
+          "a": "I contenuti dell’AI sono sempre etichettati come sintesi AI. Possono usare solo le fonti fornite, e un secondo passaggio verifica ogni affermazione e rimuove ciò che non è confermato. I numeri vengono dai dataset, mai dall’AI."
+        },
+        {
+          "q": "Le proiezioni sono sondaggi?",
+          "a": "No. Proiezioni e scenari sono risultati di modelli per la pianificazione. Sono tenuti separati dai dati dei sondaggi ed etichettati come calcoli o ipotesi utente."
+        },
+        {
+          "q": "La riforma «Stabilicum» è in vigore?",
+          "a": "Non al 6 ottobre 2026. La riforma è stata approvata dalla Camera a luglio 2026 e dal Senato a settembre 2026 e attende il voto finale della Camera. Orthanc Polis include una simulazione indicata come non in vigore, con parametri tratti dai resoconti di stampa del testo approvato, da verificare sul testo pubblicato in Gazzetta Ufficiale."
+        },
+        {
+          "q": "Possiamo esportare i report?",
+          "a": "Sì. La maggior parte delle viste si esporta in PDF, con ogni sezione etichettata per livello, la data dello snapshot dei dati e i checksum dei dataset."
+        },
+        {
+          "q": "Chi può vedere il nostro spazio di lavoro?",
+          "a": "Solo gli utenti che approvi. Amministratori e lettori hanno permessi diversi, e le azioni amministrative sono verificate sul server."
+        },
+        {
+          "q": "Come otteniamo una demo?",
+          "a": "Scrivici indicando organizzazione, regione e prossima elezione: organizzeremo una demo costruita sul tuo territorio."
+        }
+      ]
+    }
+  },
+  "investors": {
+    "navTitle": "Investitori",
+    "meta": {
+      "title": "Investitori | Orthanc Analytics",
+      "description": "Perché Orthanc, perché ora: il problema, il prodotto, i traguardi e come richiedere l’accesso alla data room di Orthanc Analytics."
+    },
+    "hero": {
+      "eyebrow": "Presentazione per investitori",
+      "title": "Intelligence politica verificata, costruita per le regole europee.",
+      "lead": "Orthanc Analytics trasforma i dati elettorali pubblici in decisioni che le campagne possono difendere. Il nostro primo prodotto, Orthanc Polis, è attivo in Italia e progettato per l’Europa.",
+      "secondary": "Esplora la piattaforma Orthanc Polis"
+    },
+    "problem": {
+      "label": "Il problema",
+      "title": "Le campagne europee pianificano con dati frammentati.",
+      "lead": "Decisioni ad alto rischio, come dove fare campagna, quali collegi contendere e come leggere i sondaggi, si basano ancora su archivi sparsi e intuito.",
+      "points": [
+        {
+          "title": "Decenni di dati, difficili da usare",
+          "body": "Solo in Italia ci sono quasi ottant’anni di risultati su migliaia di comuni, i cui confini sono cambiati nel tempo."
+        },
+        {
+          "title": "Segnali che non si parlano",
+          "body": "Sondaggi, notizie locali e statistiche ufficiali stanno in luoghi diversi e si muovono a velocità diverse."
+        },
+        {
+          "title": "Regole che chiudono il modello americano",
+          "body": "Da ottobre 2025 le norme UE sulla pubblicità politica limitano fortemente il targeting basato su dati personali. Gli strumenti costruiti su liste di elettori si adattano male all’Europa."
+        }
+      ]
+    },
+    "solution": {
+      "label": "La soluzione",
+      "title": "Un unico archivio verificato, dalla mappa nazionale a ogni comune.",
+      "lead": "Orthanc Polis riunisce dati ufficiali, proiezioni e monitoraggio in un unico spazio di lavoro, con la tracciabilità come impostazione predefinita.",
+      "link": "Esplora la piattaforma Orthanc Polis",
+      "pillars": [
+        {
+          "title": "Una base dati verificata",
+          "body": "Tutte le elezioni politiche ed europee dal 1946 per 7.906 comuni, caricate solo dopo la validazione sui risultati ufficiali."
+        },
+        {
+          "title": "Strumenti per decidere",
+          "body": "Proiezioni per collegio, priorità territoriali, scenari dei seggi e monitoraggio media in un unico luogo."
+        },
+        {
+          "title": "Fiducia integrata",
+          "body": "Provenienza, checksum, approvazione umana e contenuti AI etichettati, pensati per le regole europee fin dal primo giorno."
+        }
+      ]
+    },
+    "whyNow": {
+      "label": "Perché ora",
+      "title": "Tre fatti, con la loro data.",
+      "lead": "La politica italiana entra in un ciclo decisivo, con nuove regole europee.",
+      "checked": "Fatti verificati il {date}.",
+      "items": [
+        {
+          "when": "Entro fine 2027",
+          "title": "Le prossime elezioni politiche",
+          "body": "La legislatura in corso è iniziata il 13 ottobre 2022 e termina nell’autunno 2027: le prossime elezioni politiche sono previste entro fine 2027.",
+          "source": "Pagella Politica",
+          "sourceUrl": "https://pagellapolitica.it/articoli/data-incerta-elezioni-politiche-2027"
+        },
+        {
+          "when": "Luglio – ottobre 2026",
+          "title": "Una nuova legge elettorale",
+          "body": "La riforma «Stabilicum» è stata approvata dalla Camera a luglio 2026 e dal Senato a settembre 2026 e attende il voto finale della Camera. Una nuova legge significa nuovi conti sui seggi per ogni partito.",
+          "source": "Il Post",
+          "sourceUrl": "https://www.ilpost.it/2026/09/15/senato-approvazione-legge-elettorale/"
+        },
+        {
+          "when": "Dal 10 ottobre 2025",
+          "title": "Regole UE sulla pubblicità politica",
+          "body": "Il Regolamento (UE) 2024/900 pone condizioni rigorose all’uso di dati personali per indirizzare la pubblicità politica. Un’analisi basata su dati aggregati pubblici, come quella di Orthanc Polis, non dipende da questo tipo di targeting.",
+          "source": "Commissione europea",
+          "sourceUrl": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/democracy-eu-citizenship-anti-corruption/democracy-and-electoral-rights/transparency-and-targeting-political-advertising_en"
+        }
+      ]
+    },
+    "traction": {
+      "label": "Trazione",
+      "title": "Traguardi, con il loro contesto.",
+      "lead": "Ciò che abbiamo costruito finora, datato e verificabile.",
+      "milestonesTitle": "Traguardi di prodotto",
+      "commercialNote": "Le metriche commerciali sono condivise con gli investitori su richiesta."
+    },
+    "team": {
+      "label": "Team",
+      "title": "Perché noi, perché ora.",
+      "lead": "Le persone che costruiscono Orthanc."
+    },
+    "model": {
+      "label": "Business",
+      "title": "Modello di business e finanziamento",
+      "businessModel": "Modello di business",
+      "round": "Round in corso"
+    },
+    "dataRoom": {
+      "label": "Due diligence",
+      "title": "Approfondisci nella data room.",
+      "body": "Questa pagina racconta la storia. La data room contiene i dettagli per la due diligence. Scrivici e organizzeremo l’accesso.",
+      "cta": "Richiedi l’accesso alla data room",
+      "deck": "Scarica la presentazione per investitori",
+      "mailSubject": "Richiesta di accesso alla data room: Orthanc Analytics",
+      "mailBody": "Nome:\nFondo o organizzazione:\nRuolo:\nFocus di investimento:\n"
+    }
+  },
+  "company": {
+    "navTitle": "Azienda",
+    "meta": {
+      "title": "Azienda | Orthanc Analytics",
+      "description": "Chi siamo e in cosa crediamo: dati verificabili, territori e non persone, e analisi calme e fattuali per chi prende decisioni politiche in Europa."
+    },
+    "hero": {
+      "eyebrow": "Azienda",
+      "title": "Costruiamo intelligence politica verificabile.",
+      "lead": "La nostra missione: dare a chi prende decisioni politiche in Europa dati che può verificare."
+    },
+    "principles": {
+      "label": "Principi",
+      "title": "In cosa crediamo",
+      "lead": "Quattro regole guidano ogni scelta di prodotto.",
+      "items": [
+        {
+          "title": "Verificabile prima che spettacolare",
+          "body": "Mostriamo la fonte, il metodo e la data. Se un dato non è verificabile, non lo mostriamo."
+        },
+        {
+          "title": "Territori, non persone",
+          "body": "Analizziamo territori e dati aggregati pubblici, non singoli elettori."
+        },
+        {
+          "title": "Onesti sull’incertezza",
+          "body": "Le proiezioni sono indicate come proiezioni, i disegni di legge come disegni di legge, i dati mancanti come mancanti."
+        },
+        {
+          "title": "Costruiti per le regole europee",
+          "body": "Il GDPR e le norme UE sulla pubblicità politica guidano i nostri prodotti fin dall’inizio, non a posteriori."
+        }
+      ]
+    },
+    "europe": {
+      "label": "Dove lavoriamo",
+      "title": "Attivo in Italia. Progettato per l’Europa.",
+      "lead": "Abbiamo iniziato dall’Italia, con quasi ottant’anni di risultati da mettere in ordine.",
+      "body": [
+        "Oggi Orthanc Polis copre l’Italia, dal quadro nazionale a ogni comune.",
+        "Principi e architettura sono pensati per essere estesi ad altri paesi europei, per partiti, campagne e gruppi politici di destra in tutta Europa."
+      ]
+    },
+    "milestones": {
+      "label": "Traguardi",
+      "title": "Cosa abbiamo costruito",
+      "lead": "Progressi datati e verificabili. Aggiorniamo questo elenco man mano che il prodotto cresce."
+    },
+    "team": {
+      "label": "Team",
+      "title": "Le persone dietro Orthanc",
+      "lead": "Le persone che costruiscono Orthanc."
+    }
+  },
+  "contact": {
+    "navTitle": "Contatti",
+    "meta": {
+      "title": "Contatti | Orthanc Analytics",
+      "description": "Richiedi una demo di Orthanc Polis, contatta le relazioni con gli investitori o scrivi al team. Email, telefono e dati societari."
+    },
+    "hero": {
+      "eyebrow": "Contatti",
+      "title": "Parla con Orthanc.",
+      "lead": "Scegli il canale adatto alla tua richiesta. Ogni pulsante apre un’email già impostata."
+    },
+    "routesLabel": "Come contattarci",
+    "includeLabel": "Indica",
+    "routes": [
+      {
+        "id": "demo",
+        "label": "Partiti, campagne e gruppi politici",
+        "title": "Richiedi una demo di Polis",
+        "body": "Costruiremo la demo intorno al tuo territorio e alla tua prossima elezione.",
+        "include": [
+          "Organizzazione",
+          "Paese e regione",
+          "Il tuo ruolo",
+          "Prossima elezione (tipo e data)"
+        ],
+        "cta": "Invia una richiesta di demo",
+        "mailSubject": "Richiesta demo Orthanc Polis",
+        "mailBody": "Organizzazione:\nPaese e regione:\nRuolo:\nProssima elezione (tipo e data):\nCosa vorresti vedere nella demo?\n"
+      },
+      {
+        "id": "investors",
+        "label": "Investitori",
+        "title": "Relazioni con gli investitori",
+        "body": "Chiedi la presentazione per investitori e l’accesso alla data room.",
+        "include": [
+          "Nome e fondo o organizzazione",
+          "Focus di investimento"
+        ],
+        "cta": "Scrivi alle relazioni investitori",
+        "mailSubject": "Richiesta investitori: Orthanc Analytics",
+        "mailBody": "Nome:\nFondo o organizzazione:\nFocus di investimento:\n"
+      },
+      {
+        "id": "press",
+        "label": "Stampa e altre richieste",
+        "title": "Richieste generali",
+        "body": "Stampa, partnership o qualsiasi altra richiesta.",
+        "include": [],
+        "cta": "Scrivi al team Orthanc",
+        "mailSubject": "Richiesta: Orthanc Analytics",
+        "mailBody": ""
+      }
+    ],
+    "mailNote": "Il pulsante non apre la tua app di posta? Scrivi a {email}.",
+    "details": {
+      "title": "Dati societari",
+      "lead": "Orthanc Analytics, la società dietro Orthanc Polis, Solo e Logos."
+    },
+    "privacy": {
+      "title": "La tua privacy",
+      "body": "Usiamo ciò che ci invii solo per risponderti e, se lo chiedi, per organizzare una demo o un incontro. Ti chiediamo di non inviare dati sensibili, come informazioni sulle opinioni politiche di singole persone. Questo sito non usa cookie né strumenti di analisi.",
+      "link": "Leggi l’informativa privacy"
+    }
+  },
+  "legal": {
+    "eyebrow": "Note legali",
+    "updated": "Ultimo aggiornamento:",
+    "tocLabel": "In questa pagina",
+    "pecSentence": "PEC: {pec}.",
+    "privacy": {
+      "navTitle": "Informativa privacy",
+      "title": "Informativa privacy",
+      "description": "Come Orthanc Analytics tratta i dati personali su questo sito: log di hosting, email che ci invii e i tuoi diritti secondo il GDPR. Nessuna analisi, nessun tracciamento."
+    },
+    "cookies": {
+      "navTitle": "Informativa sui cookie",
+      "title": "Informativa sui cookie",
+      "description": "Questo sito non usa cookie e non memorizza nulla sul tuo dispositivo. Cosa significa, e cosa cambierebbe se un giorno cambiasse."
+    },
+    "terms": {
+      "navTitle": "Condizioni d’uso",
+      "title": "Condizioni d’uso",
+      "description": "Le condizioni per usare il sito di Orthanc Analytics: contenuti, proprietà intellettuale, responsabilità e legge applicabile."
+    },
+    "accessibility": {
+      "navTitle": "Accessibilità",
+      "title": "Dichiarazione di accessibilità",
+      "description": "Il nostro impegno per un sito accessibile: lo standard che seguiamo (WCAG 2.1 AA), cosa abbiamo fatto, i limiti noti e come segnalarci un problema."
+    }
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "body": "La pagina che cerchi non esiste o è stata spostata.",
+    "home": "Vai alla pagina iniziale di Orthanc Analytics"
+  }
+}

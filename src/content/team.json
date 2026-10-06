@@ -1,0 +1,18 @@
+{
+  "_help": "Team members shown on the Company and Investors pages. The Team section stays hidden while `members` is empty. Copy `_example` into `members` for each person. `photo` is optional: put a square JPG/WebP in src/assets/img/team/ and give its file name.",
+  "_example": {
+    "name": "Full Name",
+    "role": { "en": "Co-founder & CEO", "it": "Co-fondatore e CEO" },
+    "background": {
+      "en": "One or two sentences on relevant experience.",
+      "it": "Una o due frasi sull'esperienza rilevante."
+    },
+    "whyUs": {
+      "en": "Optional: why this person is right for this problem, now.",
+      "it": "Facoltativo: perché questa persona è giusta per questo problema, adesso."
+    },
+    "linkedin": "https://www.linkedin.com/in/…",
+    "photo": "full-name.webp"
+  },
+  "members": []
+}

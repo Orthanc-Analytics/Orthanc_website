@@ -1,0 +1,49 @@
+{
+  "_help": "Product milestones shown on the Company and Investors pages, newest first. Only add milestones you can verify. Each needs a date (YYYY-MM), a title and a one-line context in both languages.",
+  "items": [
+    {
+      "date": "2026-07",
+      "title": {
+        "en": "Data warehouse and live source monitoring",
+        "it": "Data warehouse e monitoraggio delle fonti"
+      },
+      "context": {
+        "en": "Every data source now has one record of origin, checksum and freshness, with a status check that reports the health of each source.",
+        "it": "Ogni fonte ha ora un unico registro di origine, checksum e aggiornamento, con un controllo di stato che segnala la salute di ciascuna fonte."
+      }
+    },
+    {
+      "date": "2026-07",
+      "title": {
+        "en": "Election history 1946–2024 for every municipality",
+        "it": "Storico elettorale 1946–2024 per ogni comune"
+      },
+      "context": {
+        "en": "30 general and European elections, 7,906 municipalities and 3.07 million result rows, loaded only after passing four validation gates.",
+        "it": "30 elezioni politiche ed europee, 7.906 comuni e 3,07 milioni di righe di risultati, caricate solo dopo aver superato quattro controlli di validazione."
+      }
+    },
+    {
+      "date": "2026-07",
+      "title": {
+        "en": "Official ISTAT territorial register integrated",
+        "it": "Integrato il registro territoriale ufficiale ISTAT"
+      },
+      "context": {
+        "en": "Population, area, mountain and inland-area classification for every Italian municipality, from ISTAT's SITUAS register.",
+        "it": "Popolazione, superficie, classificazione montana e aree interne di ogni comune italiano, dal registro SITUAS dell’ISTAT."
+      }
+    },
+    {
+      "date": "2026-07",
+      "title": {
+        "en": "Seat simulation for the electoral-law reform",
+        "it": "Simulazione dei seggi per la riforma elettorale"
+      },
+      "context": {
+        "en": "Scenarios under the current law plus a preview of the ‘Stabilicum’ reform, always labelled as not in force and backed by 66 automated checks.",
+        "it": "Scenari con la legge vigente e un’anteprima della riforma «Stabilicum», sempre indicata come non in vigore e coperta da 66 verifiche automatiche."
+      }
+    }
+  ]
+}

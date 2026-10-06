@@ -1,0 +1,13 @@
+{
+  "_help": "Commercial traction for the Investors page (users, pilots, partners, revenue). The Traction metrics block stays hidden while `items` is empty. Every item needs context: what the number means, when it was measured and where it comes from. Only publish figures you can stand behind.",
+  "_example": {
+    "metric": { "en": "3 pilots", "it": "3 progetti pilota" },
+    "context": {
+      "en": "Regional campaign teams using Orthanc Polis ahead of the 2027 general election.",
+      "it": "Squadre di campagna regionali che usano Orthanc Polis in vista delle politiche 2027."
+    },
+    "date": "2026-10",
+    "source": { "en": "Signed pilot agreements", "it": "Accordi pilota firmati" }
+  },
+  "items": []
+}

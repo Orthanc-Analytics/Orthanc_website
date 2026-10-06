@@ -1,0 +1,28 @@
+{
+  "_help": "Edit this file to update company and contact details on every page. A null value shows as [TO COMPLETE] / [DA COMPLETARE] on the site and is listed as a warning by `npm run build`. See README.md.",
+  "siteUrl": "https://orthanc-analytics.github.io/Orthanc_website",
+  "brandName": "Orthanc Analytics",
+  "company": {
+    "legalName": null,
+    "registeredOffice": null,
+    "vatNumber": null,
+    "companyRegister": null,
+    "shareCapital": null,
+    "pec": null,
+    "email": "contact@orthanc-analytics.com",
+    "privacyEmail": null,
+    "phone": null,
+    "competentCourt": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "privacy": {
+    "emailProvider": null
+  },
+  "dates": {
+    "legalUpdated": "2026-10-06",
+    "factsCheckedOn": "2026-10-06"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "_help": "Optional investor details. Each block on the Investors page appears only when its value is filled. `deckUrl` can be a relative path (e.g. assets/docs/orthanc-deck.pdf) or a full URL. `dataRoomEmail` defaults to the company email in src/config/site.json.",
+  "deckUrl": null,
+  "dataRoomEmail": null,
+  "businessModel": null,
+  "round": null
+}

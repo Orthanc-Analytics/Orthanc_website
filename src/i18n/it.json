@@ -37,15 +37,6 @@
       "title": "Guarda il tuo territorio in Orthanc Polis.",
       "body": "Indicaci la tua regione e la tua prossima elezione: costruiremo la demo su misura."
     },
-    "contact": {
-      "email": "Email",
-      "phone": "Telefono",
-      "office": "Sede legale",
-      "vat": "P. IVA",
-      "register": "Registro delle imprese",
-      "capital": "Capitale sociale",
-      "pec": "PEC"
-    },
     "footer": {
       "claim": "Intelligence politica per l’Europa, fondata su dati verificabili.",
       "contactTitle": "Contatti",
@@ -67,7 +58,18 @@
       "accessibility": "Dichiarazione di accessibilità",
       "noCookies": "Questo sito non usa cookie",
       "mapData": "Dati cartografici: Natural Earth"
-    }
+    },
+    "operator": {
+      "who": "Orthanc Analytics è un progetto di {founders} — società in costituzione.",
+      "address": "Recapito: {address}, Roma · {email}"
+    },
+    "placeholders": {
+      "founder": "[NOME {n}]",
+      "address": "[INDIRIZZO]",
+      "emailProvider": "[FORNITORE EMAIL]"
+    },
+    "mailNote": "Useremo i dati che ci invii solo per rispondere alla tua richiesta. Non inviare dati sensibili. Informativa: {link}",
+    "mailNoteLink": "trattamento dei dati personali"
   },
   "maps": {
     "europeAlt": "Mappa a punti dell’Europa. L’Italia, dove Orthanc Polis è attivo, è in bianco; gli altri paesi europei in grigio.",
@@ -223,17 +225,31 @@
       },
       "solo": {
         "tag": "Mobile",
-        "body": "Intelligence mobile-first per le campagne comunali e le amministrazioni cittadine: analisi per quartiere, dati demografici e monitoraggio in tempo reale delle elezioni locali.",
+        "body": "Software per le campagne elettorali nelle città e nei comuni.",
         "link": "Chiedici di Orthanc Solo",
         "alt": "Schermata illustrativa di Orthanc Solo: una dashboard dei risultati comunali con la mappa dei quartieri."
       },
       "logos": {
         "tag": "In arrivo",
-        "body": "La prossima piattaforma Orthanc: analisi del linguaggio politico, del dibattito e delle politiche pubbliche con il supporto dell’AI.",
+        "body": "La prossima piattaforma Orthanc: un motore finanziario, alimentato da Orthanc Polis e Orthanc Solo, che aiuta un partito a decidere dove, come e quando investire.",
         "link": "Iscriviti alla lista d’attesa di Orthanc Logos",
         "mailSubject": "Orthanc Logos: lista d’attesa",
         "alt": "Anteprima di Orthanc Logos: una rete di punti collegati a forma di cervello."
       }
+    },
+    "system": {
+      "label": "Sistema integrato",
+      "title": "Un unico sistema integrato.",
+      "lead": "Orthanc Polis e Orthanc Solo leggono l’elettorato, dal quadro nazionale al consiglio comunale. Orthanc Logos, in arrivo, trasformerà ciò che emerge in decisioni su dove, come e quando investire.",
+      "feeds": "Alimenta",
+      "polis": "Intelligence elettorale nazionale e regionale",
+      "solo": "Campagne nelle città e nei comuni",
+      "logos": "Motore finanziario che aiuta un partito a decidere dove, come e quando investire",
+      "decide": [
+        "Dove",
+        "Come",
+        "Quando"
+      ]
     },
     "investorBand": {
       "label": "Investitori",
@@ -733,7 +749,7 @@
     "navTitle": "Contatti",
     "meta": {
       "title": "Contatti | Orthanc Analytics",
-      "description": "Richiedi una demo di Orthanc Polis, contatta le relazioni con gli investitori o scrivi al team. Email, telefono e dati societari."
+      "description": "Richiedi una demo di Orthanc Polis, contatta le relazioni con gli investitori o scrivi al team via email."
     },
     "hero": {
       "eyebrow": "Contatti",
@@ -784,8 +800,7 @@
     ],
     "mailNote": "Il pulsante non apre la tua app di posta? Scrivi a {email}.",
     "details": {
-      "title": "Dati societari",
-      "lead": "Orthanc Analytics, la società dietro Orthanc Polis, Solo e Logos."
+      "title": "Chi gestisce il sito"
     },
     "privacy": {
       "title": "La tua privacy",
@@ -797,7 +812,6 @@
     "eyebrow": "Note legali",
     "updated": "Ultimo aggiornamento:",
     "tocLabel": "In questa pagina",
-    "pecSentence": "PEC: {pec}.",
     "privacy": {
       "navTitle": "Informativa privacy",
       "title": "Informativa privacy",
@@ -817,6 +831,11 @@
       "navTitle": "Accessibilità",
       "title": "Dichiarazione di accessibilità",
       "description": "Il nostro impegno per un sito accessibile: lo standard che seguiamo (WCAG 2.1 AA), cosa abbiamo fatto, i limiti noti e come segnalarci un problema."
+    },
+    "startup": {
+      "navTitle": "Startup innovativa",
+      "title": "Startup innovativa: informazioni ai sensi dell’art. 25 D.L. 179/2012",
+      "description": "Bozza: informazioni che Orthanc Analytics pubblicherà dopo l’iscrizione nella sezione speciale del Registro delle imprese dedicata alle startup innovative."
     }
   },
   "notFound": {

@@ -1,4 +1,4 @@
-import { btn, linkArrow, mailto, secHead, stats, rows, europeMap, italyMap, ctaBand } from '../components.mjs';
+import { btn, linkArrow, mailto, privacyNote, secHead, stats, rows, europeMap, italyMap, ctaBand } from '../components.mjs';
 
 const CITIES = [
   ['roma', 'Roma', '41.9028° N', '12.4964° E'], ['madrid', 'Madrid', '40.4168° N', '3.7038° W'],
@@ -112,9 +112,36 @@ export default function home(c) {
           <p class="card__tag mono">${p('logos.tag')}</p>
           <h3 class="card__title">Orthanc Logos</h3>
           <p>${p('logos.body')}</p>
+          ${privacyNote(c)}
           ${linkArrow(mailto(c.site.company.email, p('logos.mailSubject')), p('logos.link'))}
         </li>
       </ul>
+    </div>
+  </section>`;
+
+  // How the products fit together: Polis and Solo feed Logos.
+  const sys = k => t(`home.system.${k}`);
+  const node = (name, tag, role, live = false) => `<li class="system__node">
+          <p class="card__tag mono">${live ? '<span class="dot dot--live" aria-hidden="true"></span>' : ''}${tag}</p>
+          <h3 class="system__name">${name}</h3>
+          <p>${role}</p>
+        </li>`;
+  const system = `<section class="sec" id="system" aria-labelledby="system-title">
+    <div class="wrap">
+      ${secHead({ idx: '06', label: sys('label'), title: sys('title'), lead: sys('lead'), id: 'system-title' })}
+      <div class="system">
+        <ul class="system__in">
+          ${node('Orthanc Polis', p('polis.tag'), sys('polis'), true)}
+          ${node('Orthanc Solo', p('solo.tag'), sys('solo'))}
+        </ul>
+        <p class="system__flow mono" aria-hidden="true"><span>${sys('feeds')}</span><span class="system__arrow system__arrow--h">→</span><span class="system__arrow system__arrow--v">↓</span></p>
+        <div class="system__out">
+          <p class="card__tag mono">${p('logos.tag')}</p>
+          <h3 class="system__name">Orthanc Logos</h3>
+          <p>${sys('logos')}</p>
+          <ul class="system__decide">${sys('decide').map(x => `<li class="chip chip--hollow mono">${x}</li>`).join('')}</ul>
+        </div>
+      </div>
     </div>
   </section>`;
 
@@ -132,6 +159,6 @@ export default function home(c) {
   return {
     title: t('home.meta.title'),
     description: t('home.meta.description'),
-    body: [hero, evidence, problem, capabilities, method, audience, platforms, investorBand, ctaBand(c)].join('\n'),
+    body: [hero, evidence, problem, capabilities, method, audience, platforms, system, investorBand, ctaBand(c)].join('\n'),
   };
 }

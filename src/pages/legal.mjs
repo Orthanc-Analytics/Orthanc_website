@@ -1,31 +1,28 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { crumbs, fmtDate } from '../components.mjs';
+import { crumbs, fmtDate, founderNames, privacyNote } from '../components.mjs';
 
 const LEGAL_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'legal');
 
 // Legal texts live in src/legal/<page>.<lang>.html. Tokens:
-//   {{legalName}} {{registeredOffice}} {{vatNumber}} {{court}}   company details (placeholder when missing)
-//   {{emailProvider}}                                             email provider named in the privacy policy
-//   {{email}} {{privacyEmail}}                                    mailto links
-//   {{pecSentence}}                                               "PEC: …" sentence, or nothing
-//   {{link:<page>}}                                               relative link to another page, same language
+//   {{founders}}                 the founders' names, "A and B" / "A e B" (placeholder when missing)
+//   {{address}}                  contact address (placeholder when missing)
+//   {{emailProvider}}            email provider named in the privacy policy (placeholder when missing)
+//   {{email}}                    mailto link
+//   {{mailNote}}                 short privacy note, placed after an email address (not in the privacy policy)
+//   {{link:<page>}}              relative link to another page, same language
 //   {{siteUrl}} {{updated}}
 export default function legal(c) {
   const name = c.page.key.split('.')[1];
   const co = c.site.company;
-  const mail = e => `<a href="mailto:${e}">${c.esc(e)}</a>`;
   let html = fs.readFileSync(path.join(LEGAL_DIR, `${name}.${c.lang}.html`), 'utf8');
   const tokens = {
-    legalName: c.ph(co.legalName),
-    registeredOffice: c.ph(co.registeredOffice),
-    vatNumber: c.ph(co.vatNumber),
-    court: c.ph(co.competentCourt),
-    emailProvider: c.ph(c.site.privacy?.emailProvider),
-    email: mail(co.email),
-    privacyEmail: mail(co.privacyEmail || co.email),
-    pecSentence: co.pec ? c.t('legal.pecSentence', { pec: mail(co.pec) }) : '',
+    founders: founderNames(c),
+    address: c.ph(co.address, 'common.placeholders.address'),
+    emailProvider: c.ph(c.site.privacy?.emailProvider, 'common.placeholders.emailProvider'),
+    email: `<a href="mailto:${co.email}">${c.esc(co.email)}</a>`,
+    mailNote: privacyNote(c),
     siteUrl: c.esc(c.site.siteUrl),
     updated: fmtDate(c, c.site.dates.legalUpdated),
   };

@@ -2,10 +2,10 @@
 // Builds the static site into dist/. No dependencies: Node 18+ only.
 //
 //   node build.mjs          build dist/
-//   node build.mjs --strict also fail when company details are still placeholders
+//   node build.mjs --strict also fail while a detail (address, email provider) is still a placeholder
 //
 // English pages are written at the site root, Italian pages under /it/.
-// Copy lives in src/i18n/{en,it}.json, company details in src/config/site.json,
+// Copy lives in src/i18n/{en,it}.json, who runs the site in src/config/site.json,
 // optional sections (team, traction, investor info, milestones) in src/content/.
 
 import fs from 'node:fs';
@@ -45,6 +45,8 @@ const PAGES = [
   { id: 'cookies', key: 'legal.cookies', slug: { en: 'cookies.html', it: 'cookie.html' }, tpl: 'legal' },
   { id: 'terms', key: 'legal.terms', slug: { en: 'terms.html', it: 'termini.html' }, tpl: 'legal' },
   { id: 'accessibility', key: 'legal.accessibility', slug: { en: 'accessibility.html', it: 'accessibilita.html' }, tpl: 'legal' },
+  // Draft, not linked from any page until registration as an innovative startup: noindex, not in the sitemap.
+  { id: 'startup', key: 'legal.startup', slug: { en: 'innovative-startup.html', it: 'startup-innovativa.html' }, tpl: 'legal', unlisted: true },
 ];
 const byId = Object.fromEntries(PAGES.map(p => [p.id, p]));
 
@@ -65,10 +67,11 @@ for (const a of LANGS) for (const b of LANGS) {
   for (const k of shapes[a]) if (!shapes[b].has(k)) errors.push(`i18n: "${k}" exists in ${a}.json but not in ${b}.json`);
 }
 
-const REQUIRED = ['legalName', 'registeredOffice', 'vatNumber', 'phone', 'competentCourt'];
-const RECOMMENDED = ['companyRegister', 'shareCapital', 'pec'];
-for (const k of REQUIRED) if (!site.company[k]) warnings.push(`company.${k} is not set: shown as a placeholder on the site`);
-for (const k of RECOMMENDED) if (!site.company[k]) warnings.push(`company.${k} is not set (recommended for Italian companies): hidden`);
+const founders = site.company.founders ?? [];
+if (!founders.length) errors.push('company.founders is empty: the site must say who runs it');
+founders.forEach((n, i) => { if (!n) warnings.push(`company.founders[${i}] is not set: shown as a placeholder on the site`); });
+if (!site.company.address) warnings.push('company.address is not set: shown as a placeholder in the footer, contact page, privacy policy and terms');
+if (!site.company.email) errors.push('company.email is not set');
 if (!site.privacy?.emailProvider) warnings.push('privacy.emailProvider is not set: shown as a placeholder in the privacy policy');
 
 // ---------------------------------------------------------------- assets
@@ -134,8 +137,11 @@ function makeContext(page, lang) {
       const v = version(rel);
       return `${up}assets/${rel}${withVersion && v ? `?v=${v}` : ''}`;
     },
-    ph(value) {
-      return value ? esc(value) : `<span class="ph">${lookup(lang, 'common.placeholder')}</span>`;
+    // Escaped value, or a visible placeholder label (default "[TO COMPLETE]") when it is missing.
+    ph(value, key = 'common.placeholder', vars = {}) {
+      if (value) return esc(value);
+      const label = String(lookup(lang, key)).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+      return `<span class="ph">${label}</span>`;
     },
   };
   return c;
@@ -202,7 +208,7 @@ for (const page of PAGES) {
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${PAGES.flatMap(page => LANGS.map(lang => {
+${PAGES.filter(page => !page.unlisted).flatMap(page => LANGS.map(lang => {
   const c = makeContext(page, lang);
   return `  <url>
     <loc>${c.abs(page.id)}</loc>

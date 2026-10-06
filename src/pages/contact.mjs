@@ -1,4 +1,4 @@
-import { btn, linkArrow, mailto, contactList, subHero } from '../components.mjs';
+import { btn, linkArrow, mailto, operatorBlock, privacyNote, subHero } from '../components.mjs';
 
 export default function contact(c) {
   const t = c.t;
@@ -18,7 +18,7 @@ export default function contact(c) {
       <h2 class="h3 route__title">${r.title}</h2>
       <p>${r.body}</p>
       ${r.include?.length ? `<p class="route__inc mono">${t('contact.includeLabel')}</p><ul class="ticks">${r.include.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
-      <div class="route__cta">${btn(mailto(to, r.mailSubject, r.mailBody), r.cta, r.id === 'demo' ? '' : 'ghost')}</div>
+      <div class="route__cta">${btn(mailto(to, r.mailSubject, r.mailBody), r.cta, r.id === 'demo' ? '' : 'ghost')}${privacyNote(c)}</div>
     </li>`;
   }).join('');
 
@@ -27,15 +27,15 @@ export default function contact(c) {
     <div class="wrap">
       <ul class="routes">${routes}</ul>
       <p class="note">${t('contact.mailNote', { email: `<a href="mailto:${email}">${c.esc(email)}</a>` })}</p>
+      ${privacyNote(c)}
     </div>
   </section>
   <section class="sec" id="details" aria-labelledby="details-title">
     <div class="wrap split">
       <header class="sec__head">
         <h2 class="h2" id="details-title">${t('contact.details.title')}</h2>
-        <p class="lead">${t('contact.details.lead')}</p>
       </header>
-      ${contactList(c, { withPec: true })}
+      ${operatorBlock(c)}
     </div>
   </section>
   <section class="sec sec--inv" id="privacy-note" aria-labelledby="pn-title">

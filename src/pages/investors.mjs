@@ -1,4 +1,4 @@
-import { btn, linkArrow, mailto, secHead, milestones, teamGrid, fmtMonth, subHero } from '../components.mjs';
+import { btn, linkArrow, mailto, privacyNote, secHead, milestones, teamGrid, fmtMonth, subHero } from '../components.mjs';
 
 export default function investors(c) {
   const t = c.t;
@@ -15,6 +15,7 @@ export default function investors(c) {
     title: t('investors.hero.title'),
     lead: t('investors.hero.lead'),
     actions: `${btn(roomHref, t('investors.dataRoom.cta'))}${btn(c.href('polis'), t('investors.hero.secondary'), 'ghost')}`,
+    note: privacyNote(c),
   });
 
   const problem = `<section class="sec" id="problem" aria-labelledby="problem-title">
@@ -97,6 +98,7 @@ export default function investors(c) {
         ${btn(roomHref, t('investors.dataRoom.cta'))}
         ${deck ? btn(c.esc(deck), t('investors.dataRoom.deck'), 'ghost') : ''}
       </div>
+      ${privacyNote(c)}
     </div>
   </section>`;
 

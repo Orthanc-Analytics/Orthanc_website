@@ -1,18 +1,12 @@
 {
-  "_help": "Edit this file to update company and contact details on every page. A null value shows as [TO COMPLETE] / [DA COMPLETARE] on the site and is listed as a warning by `npm run build`. See README.md.",
+  "_help": "Who runs the site, and how to reach them. Shown in the footer of every page, on the Contact page, and in the privacy policy and terms. A null value shows as a bracketed placeholder ([ADDRESS] / [INDIRIZZO]) and is listed as a warning by `npm run build`. See README.md.",
   "siteUrl": "https://orthanc-analytics.github.io/Orthanc_website",
   "brandName": "Orthanc Analytics",
   "company": {
-    "legalName": null,
-    "registeredOffice": null,
-    "vatNumber": null,
-    "companyRegister": null,
-    "shareCapital": null,
-    "pec": null,
-    "email": "contact@orthanc-analytics.com",
-    "privacyEmail": null,
-    "phone": null,
-    "competentCourt": null
+    "_help": "Stage 1, before incorporation: the founders run the site and are joint data controllers. Do not add 'S.r.l.', a VAT number or a registered office until the company exists: after incorporation, use the footer template kept as an HTML comment in src/layout.mjs and update the privacy policy and terms (README → Stage 2).",
+    "founders": ["Leonardo Cristofani", "Giulio Presaghi"],
+    "address": null,
+    "email": "contact@orthanc-analytics.com"
   },
   "social": {
     "linkedin": null,

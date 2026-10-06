@@ -37,15 +37,6 @@
       "title": "See your territory in Orthanc Polis.",
       "body": "Tell us your region and your next election. We’ll build the demo around them."
     },
-    "contact": {
-      "email": "Email",
-      "phone": "Phone",
-      "office": "Registered office",
-      "vat": "VAT no.",
-      "register": "Company register",
-      "capital": "Share capital",
-      "pec": "Certified email (PEC)"
-    },
     "footer": {
       "claim": "Political intelligence for Europe, built on verifiable data.",
       "contactTitle": "Contact",
@@ -67,7 +58,18 @@
       "accessibility": "Accessibility statement",
       "noCookies": "This site uses no cookies",
       "mapData": "Map data: Natural Earth"
-    }
+    },
+    "operator": {
+      "who": "Orthanc Analytics is a project by {founders} — company in formation.",
+      "address": "Address: {address}, Rome, Italy · {email}"
+    },
+    "placeholders": {
+      "founder": "[NAME {n}]",
+      "address": "[ADDRESS]",
+      "emailProvider": "[EMAIL PROVIDER]"
+    },
+    "mailNote": "We use what you send only to reply to your request. Please do not send sensitive data. Privacy notice: {link}",
+    "mailNoteLink": "how we process personal data"
   },
   "maps": {
     "europeAlt": "Dot map of Europe. Italy, where Orthanc Polis is live, is shown in white; other European countries in grey.",
@@ -223,17 +225,31 @@
       },
       "solo": {
         "tag": "Mobile",
-        "body": "Mobile-first intelligence for municipal campaigns and city administrations: neighbourhood-level insight, demographic breakdowns and live monitoring of local elections.",
+        "body": "Software for election campaigns in cities and municipalities.",
         "link": "Ask us about Orthanc Solo",
         "alt": "Illustrative concept screen of Orthanc Solo: a municipal results dashboard with a district map."
       },
       "logos": {
         "tag": "Coming soon",
-        "body": "The next Orthanc platform: AI-assisted analysis of political language, debate and policy.",
+        "body": "The next Orthanc platform: a financial engine, fed by Orthanc Polis and Orthanc Solo, that helps a party decide where, how and when to invest.",
         "link": "Join the Orthanc Logos waiting list",
         "mailSubject": "Orthanc Logos: waiting list",
         "alt": "Orthanc Logos teaser: a network of connected points in the shape of a brain."
       }
+    },
+    "system": {
+      "label": "Integrated system",
+      "title": "One integrated system.",
+      "lead": "Orthanc Polis and Orthanc Solo map the electorate, from the national picture to the city council. Orthanc Logos, coming soon, will turn what they find into decisions on where, how and when to invest.",
+      "feeds": "Feeds",
+      "polis": "National and regional electoral intelligence",
+      "solo": "Campaigns in cities and municipalities",
+      "logos": "Financial engine that helps a party decide where, how and when to invest",
+      "decide": [
+        "Where",
+        "How",
+        "When"
+      ]
     },
     "investorBand": {
       "label": "Investors",
@@ -733,7 +749,7 @@
     "navTitle": "Contact",
     "meta": {
       "title": "Contact | Orthanc Analytics",
-      "description": "Request an Orthanc Polis demo, contact investor relations or reach the team. Email, phone and company details."
+      "description": "Request an Orthanc Polis demo, contact investor relations or reach the team by email."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -784,8 +800,7 @@
     ],
     "mailNote": "Buttons not opening your email app? Write to {email}.",
     "details": {
-      "title": "Company details",
-      "lead": "Orthanc Analytics, the company behind Orthanc Polis, Solo and Logos."
+      "title": "Who runs this site"
     },
     "privacy": {
       "title": "Your privacy",
@@ -797,7 +812,6 @@
     "eyebrow": "Legal",
     "updated": "Last updated:",
     "tocLabel": "On this page",
-    "pecSentence": "Certified email (PEC): {pec}.",
     "privacy": {
       "navTitle": "Privacy policy",
       "title": "Privacy policy",
@@ -817,6 +831,11 @@
       "navTitle": "Accessibility",
       "title": "Accessibility statement",
       "description": "Our commitment to an accessible website: the standard we follow (WCAG 2.1 AA), what we have done, known limitations and how to give feedback."
+    },
+    "startup": {
+      "navTitle": "Innovative startup",
+      "title": "Innovative startup: information under Art. 25 of Decree-Law 179/2012",
+      "description": "Draft: information that Orthanc Analytics will publish after registration in the special section of the Companies Register for innovative startups."
     }
   },
   "notFound": {

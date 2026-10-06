@@ -116,22 +116,29 @@ export function teamGrid(c) {
   </ul>`;
 }
 
-// Contact details block, used in the footer and on the Contact page.
-export function contactList(c, { withPec = false } = {}) {
+// The founders' names: "A and B" / "A e B" in prose, "A, B" for the copyright line.
+// A missing name shows as a placeholder ([NAME 1] / [NOME 1]).
+export function founderNames(c, { list = false } = {}) {
+  const names = c.site.company.founders.map((n, i) => c.ph(n, 'common.placeholders.founder', { n: i + 1 }));
+  if (list) return names.join(', ');
+  return new Intl.ListFormat(c.lang === 'it' ? 'it' : 'en-GB', { style: 'long', type: 'conjunction' }).format(names);
+}
+
+// Short privacy note, shown next to every mailto link (except inside the privacy policy itself).
+export function privacyNote(c) {
+  const link = `<a href="${c.href('privacy')}">${c.t('common.mailNoteLink')}</a>`;
+  return `<p class="mailnote">${c.t('common.mailNote', { link })}</p>`;
+}
+
+// Who runs the site before incorporation (footer and Contact page): founders, address, email.
+export function operatorBlock(c) {
   const co = c.site.company;
-  const tel = co.phone ? `<a href="tel:${co.phone.replace(/[^+\d]/g, '')}">${c.esc(co.phone)}</a>` : c.ph();
-  const lines = [
-    [c.t('common.contact.email'), `<a href="mailto:${co.email}">${c.esc(co.email)}</a>`],
-    [c.t('common.contact.phone'), tel],
-    [c.t('common.contact.office'), c.ph(co.registeredOffice)],
-    [c.t('common.contact.vat'), c.ph(co.vatNumber)],
-  ];
-  if (co.companyRegister) lines.push([c.t('common.contact.register'), c.esc(co.companyRegister)]);
-  if (co.shareCapital) lines.push([c.t('common.contact.capital'), c.esc(co.shareCapital)]);
-  if (withPec && co.pec) lines.push([c.t('common.contact.pec'), `<a href="mailto:${co.pec}">${c.esc(co.pec)}</a>`]);
-  return `<dl class="clist">
-    ${lines.map(([k, v]) => `<div class="clist__row"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}
-  </dl>`;
+  const email = `<a href="mailto:${co.email}">${c.esc(co.email)}</a>`;
+  return `<div class="who">
+    <p class="who__line">${c.t('common.operator.who', { founders: founderNames(c) })}</p>
+    <p class="who__addr">${c.t('common.operator.address', { address: c.ph(co.address, 'common.placeholders.address'), email })}</p>
+    ${privacyNote(c)}
+  </div>`;
 }
 
 // Closing call-to-action band, shared by several pages.
@@ -154,7 +161,7 @@ export function crumbs(c) {
   </nav>`;
 }
 
-export function subHero(c, { eyebrow, title, lead, actions = '', visual = '' }) {
+export function subHero(c, { eyebrow, title, lead, actions = '', note = '', visual = '' }) {
   return `<section class="hero hero--sub${visual ? '' : ' hero--text'}" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__copy">
@@ -163,6 +170,7 @@ export function subHero(c, { eyebrow, title, lead, actions = '', visual = '' }) 
         <h1 class="h1" id="hero-title">${title}</h1>
         ${lead ? `<p class="lead hero__lead">${lead}</p>` : ''}
         ${actions ? `<div class="actions">${actions}</div>` : ''}
+        ${note}
       </div>
       ${visual ? `<div class="hero__visual">${visual}</div>` : ''}
     </div>

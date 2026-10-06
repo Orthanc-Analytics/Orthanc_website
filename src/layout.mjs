@@ -1,4 +1,4 @@
-import { contactList } from './components.mjs';
+import { founderNames, operatorBlock } from './components.mjs';
 
 // Inline logo mark (same geometry as src/assets/brand/orthanc-mark.svg).
 export function mark(className = '') {
@@ -37,13 +37,16 @@ function header(c) {
 </header>`;
 }
 
+// Footer to use after incorporation (art. 2250 c.c., art. 35 DPR 633/1972). Kept as an HTML comment
+// until the company exists: the site must not show "S.r.l.", a VAT number or a registered office before then.
+const POST_INCORPORATION_FOOTER = '<!-- Post-incorporation footer (not displayed): Orthanc Analytics S.r.l. · Sede legale: [VIA], [CAP] Roma (RM) · Capitale sociale € [IMPORTO] i.v. · Registro delle Imprese di Roma n. e C.F. [NUMERO] · REA RM-[NUMERO] · P. IVA [NUMERO] · PEC [PEC] -->';
+
 function footer(c) {
   const f = k => c.t(`common.footer.${k}`);
   const col = (title, links) => `<div class="ftr__col">
       <h2 class="ftr__h mono">${title}</h2>
       <ul>${links.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul>
     </div>`;
-  const co = c.site.company;
   const year = new Date().getUTCFullYear();
   const social = Object.entries(c.site.social).filter(([, v]) => v);
   return `<footer class="ftr">
@@ -56,7 +59,7 @@ function footer(c) {
       </div>
       <div class="ftr__contact">
         <h2 class="ftr__h mono">${f('contactTitle')}</h2>
-        ${contactList(c)}
+        ${operatorBlock(c)}
       </div>
       <nav class="ftr__nav" aria-label="${c.attr(f('navLabel'))}">
         ${col(f('platform'), [
@@ -79,8 +82,9 @@ function footer(c) {
         ])}
       </nav>
     </div>
+    ${POST_INCORPORATION_FOOTER}
     <div class="ftr__bottom">
-      <p>© ${year} ${c.ph(co.legalName)}${co.vatNumber ? ` · ${c.t('common.contact.vat')} ${c.esc(co.vatNumber)}` : ''}</p>
+      <p>© ${year} ${founderNames(c, { list: true })}</p>
       <p><a href="${c.href('cookies')}">${f('noCookies')}</a> · ${f('mapData')}</p>
       ${langSwitch(c, 'footer')}
     </div>
@@ -104,18 +108,10 @@ export function organizationLd(c) {
     url: `${c.site.siteUrl}/`,
     logo: `${c.site.siteUrl}/assets/brand/orthanc-logo-512.png`,
     email: co.email,
-    contactPoint: [{
-      '@type': 'ContactPoint',
-      contactType: 'sales',
-      email: co.email,
-      ...(co.phone ? { telephone: co.phone } : {}),
-      availableLanguage: ['en', 'it'],
-    }],
+    contactPoint: [{ '@type': 'ContactPoint', contactType: 'sales', email: co.email, availableLanguage: ['en', 'it'] }],
   };
-  if (co.legalName) org.legalName = co.legalName;
-  if (co.phone) org.telephone = co.phone;
-  if (co.vatNumber) org.vatID = co.vatNumber;
-  if (co.registeredOffice) org.address = co.registeredOffice;
+  const founders = co.founders.filter(Boolean);
+  if (founders.length) org.founder = founders.map(name => ({ '@type': 'Person', name }));
   const sameAs = Object.values(c.site.social).filter(Boolean);
   if (sameAs.length) org.sameAs = sameAs;
   return org;
@@ -150,7 +146,7 @@ export function layout(c, { title, description, body, jsonld = [], breadcrumb = 
   <link rel="canonical" href="${c.abs(c.page.id)}">
   ${alt}
   <link rel="alternate" hreflang="x-default" href="${c.abs(c.page.id, c.defaultLang)}">
-  <meta name="theme-color" content="#000000">
+  ${c.page.unlisted ? '<meta name="robots" content="noindex">\n  ' : ''}<meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${c.attr(c.site.brandName)}">

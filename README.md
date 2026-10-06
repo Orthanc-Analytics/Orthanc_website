@@ -59,6 +59,8 @@ The product images (`solo-dashboard-*.webp`, `logos-teaser-*.webp`, `texture-net
 
 `.github/workflows/deploy.yml` runs `node build.mjs` and publishes `dist/` to GitHub Pages on every push to `main`. Only `dist/` is published: source files, docs, `.idea/` and `main.py` are not.
 
+**Pages source must stay on "GitHub Actions"** (*Settings → Pages → Build and deployment → Source*). If it is switched to *Deploy from a branch*, GitHub also runs its own branch build on every push; that build has no `index.html` to publish, so it replaces the website with this README.
+
 **Custom domain:** configure it in the repository's *Settings → Pages* (with Actions-based deployment no `CNAME` file is needed) and set `siteUrl` in `src/config/site.json` to the new address. With a custom domain, `robots.txt` and `sitemap.xml` sit at the domain root, where search engines look for them.
 
 ## Pre-launch checklist

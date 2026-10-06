@@ -26,7 +26,9 @@ const TYPES = {
 
 function resolve(urlPath) {
   let p = decodeURIComponent(urlPath.split('?')[0]);
-  if (basePath && (p === basePath || p.startsWith(`${basePath}/`))) p = p.slice(basePath.length) || '/';
+  // Like GitHub Pages: "/Orthanc_website" redirects to "/Orthanc_website/" so relative asset links resolve.
+  if (basePath && p === basePath) return { redirect: `${basePath}/` };
+  if (basePath && p.startsWith(`${basePath}/`)) p = p.slice(basePath.length);
   const file = path.normalize(path.join(DIST, p));
   if (!file.startsWith(DIST)) return null;
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) {

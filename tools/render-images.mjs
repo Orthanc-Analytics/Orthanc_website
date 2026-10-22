@@ -39,7 +39,7 @@ const og = l => {
   .word{font-weight:700;font-size:30px;letter-spacing:.38em}
   .sub{font-family:'IBM Plex Mono';font-size:13px;letter-spacing:.42em;color:#8b93a1;margin-top:8px}
   h1{font-weight:400;font-size:58px;line-height:1.04;letter-spacing:-.035em;margin:84px 0 0}
-  .eyebrow{position:absolute;left:72px;bottom:64px;font-family:'IBM Plex Mono';font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#8b93a1}
+  .eyebrow{position:absolute;left:72px;bottom:64px;max-width:600px;font-family:'IBM Plex Mono';font-size:15px;line-height:1.6;letter-spacing:.14em;text-transform:uppercase;color:#8b93a1}
   </style>
   <div class="grid"></div>
   <img class="map" src="${A('img/europe-dots.svg')}">

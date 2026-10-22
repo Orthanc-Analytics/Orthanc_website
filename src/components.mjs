@@ -10,6 +10,15 @@ export function linkArrow(href, text, attrs = '') {
   return `<a class="link-arrow" href="${href}"${attrs}><span class="u">${text}</span>${arrow}</a>`;
 }
 
+// Link to a section of the home page: a plain fragment on the home page itself, so the browser scrolls
+// without reloading; a relative link to the home page from the legal pages.
+export function section(c, hash) {
+  return c.page.id === 'home' ? `#${hash}` : c.href('home', { hash });
+}
+
+// The three products, in the order of the home page. Product names are the same in both languages.
+export const PRODUCTS = [['polis', 'Orthanc Polis', 'Polis'], ['solo', 'Orthanc Solo', 'Solo'], ['logos', 'Orthanc Logos', 'Logos']];
+
 export function mailto(email, subject, body = '') {
   const q = [`subject=${encodeURIComponent(subject)}`];
   if (body) q.push(`body=${encodeURIComponent(body)}`);
@@ -22,29 +31,6 @@ export function secHead({ idx, label, title, lead, id, level = 2 }) {
     <h${level} class="h2" id="${id}">${title}</h${level}>
     ${lead ? `<p class="lead">${lead}</p>` : ''}
   </header>`;
-}
-
-export function stats(items, cols = 4) {
-  return `<dl class="stats stats--${cols}">
-    ${items.map(s => `<div class="stat">
-      <dt class="stat__label">${s.label}</dt>
-      <dd class="stat__num">${s.num}</dd>
-      <dd class="stat__src"><span class="mono">${s.srcLabel}</span> ${s.src}</dd>
-    </div>`).join('')}
-  </dl>`;
-}
-
-export function rows(items, { numbered = true, name, openFirst = false } = {}) {
-  return `<div class="rows${numbered ? ' rows--num' : ''}">
-    ${items.map((r, i) => `<details class="row"${name ? ` name="${name}"` : ''}${openFirst && i === 0 ? ' open' : ''}>
-      <summary class="row__sum">
-        ${numbered ? `<span class="row__n mono">${String(i + 1).padStart(2, '0')}</span>` : ''}
-        <span class="row__title">${r.title}</span>
-        <span class="row__icon" aria-hidden="true"></span>
-      </summary>
-      <div class="row__body">${r.body.startsWith('<') ? r.body : `<p>${r.body}</p>`}</div>
-    </details>`).join('')}
-  </div>`;
 }
 
 export function europeMap(c, { pins = true, caption = true, className = '' } = {}) {
@@ -77,43 +63,10 @@ export function italyMap(c, { pins = true, caption = '', className = '', alt } =
   </figure>`;
 }
 
-export function fmtMonth(c, ym) {
-  const [y, m] = ym.split('-').map(Number);
-  return new Intl.DateTimeFormat(c.lang === 'it' ? 'it-IT' : 'en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' })
-    .format(new Date(Date.UTC(y, m - 1, 1)));
-}
-
 export function fmtDate(c, ymd) {
   const [y, m, d] = ymd.split('-').map(Number);
   return new Intl.DateTimeFormat(c.lang === 'it' ? 'it-IT' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
     .format(new Date(Date.UTC(y, m - 1, d)));
-}
-
-export function milestones(c) {
-  const items = c.content.milestones;
-  if (!items.length) return '';
-  return `<ol class="timeline">
-    ${items.map(m => `<li class="tl">
-      <p class="tl__date mono"><time datetime="${m.date}">${fmtMonth(c, m.date)}</time></p>
-      <h3 class="tl__title">${c.esc(m.title[c.lang])}</h3>
-      <p class="tl__ctx">${c.esc(m.context[c.lang])}</p>
-    </li>`).join('')}
-  </ol>`;
-}
-
-export function teamGrid(c) {
-  const members = c.content.team;
-  if (!members.length) return '';
-  return `<ul class="team">
-    ${members.map(p => `<li class="person">
-      ${p.photo ? `<img class="person__photo" src="${c.asset(`img/team/${p.photo}`)}" alt="" width="400" height="400" loading="lazy" decoding="async">` : ''}
-      <h3 class="person__name">${c.esc(p.name)}</h3>
-      <p class="person__role mono">${c.esc(p.role?.[c.lang] ?? '')}</p>
-      ${p.background?.[c.lang] ? `<p>${c.esc(p.background[c.lang])}</p>` : ''}
-      ${p.whyUs?.[c.lang] ? `<p class="person__why">${c.esc(p.whyUs[c.lang])}</p>` : ''}
-      ${p.linkedin ? linkArrow(c.esc(p.linkedin), c.t('common.linkedinOf', { name: c.esc(p.name) }), ' rel="noopener"') : ''}
-    </li>`).join('')}
-  </ul>`;
 }
 
 // The founders' names: "A and B" / "A e B" in prose, "A, B" for the copyright line.
@@ -130,7 +83,7 @@ export function privacyNote(c) {
   return `<p class="mailnote">${c.t('common.mailNote', { link })}</p>`;
 }
 
-// Who runs the site before incorporation (footer and Contact page): founders, address, email.
+// Who runs the site before incorporation (footer of every page): founders, address, email.
 export function operatorBlock(c) {
   const co = c.site.company;
   const email = `<a href="mailto:${co.email}">${c.esc(co.email)}</a>`;
@@ -141,38 +94,10 @@ export function operatorBlock(c) {
   </div>`;
 }
 
-// Closing call-to-action band, shared by several pages.
-export function ctaBand(c, { titleKey = 'common.ctaBand.title', bodyKey = 'common.ctaBand.body' } = {}) {
-  return `<section class="band band--cta" aria-labelledby="cta-title">
-    <div class="band__bg" aria-hidden="true"></div>
-    <div class="wrap band__in">
-      <p class="idx mono">${c.t('common.ctaBand.label')}</p>
-      <h2 class="h2" id="cta-title">${c.t(titleKey)}</h2>
-      <p class="lead">${c.t(bodyKey)}</p>
-      <div class="actions">${btn(c.href('contact', { hash: 'demo' }), c.t('common.cta.demoPolis'))}</div>
-    </div>
-  </section>`;
-}
-
-// Visible breadcrumb for sub-pages.
+// Visible breadcrumb for the legal pages.
 export function crumbs(c) {
   return `<nav class="crumbs mono" aria-label="${c.attr(c.t('common.breadcrumbLabel'))}">
     <ol><li><a href="${c.href('home')}">${c.t('common.breadcrumbHome')}</a></li><li aria-current="page">${c.t(`${c.page.key}.navTitle`)}</li></ol>
   </nav>`;
 }
 
-export function subHero(c, { eyebrow, title, lead, actions = '', note = '', visual = '' }) {
-  return `<section class="hero hero--sub${visual ? '' : ' hero--text'}" aria-labelledby="hero-title">
-    <div class="wrap hero__grid">
-      <div class="hero__copy">
-        ${crumbs(c)}
-        <p class="eyebrow mono">${eyebrow}</p>
-        <h1 class="h1" id="hero-title">${title}</h1>
-        ${lead ? `<p class="lead hero__lead">${lead}</p>` : ''}
-        ${actions ? `<div class="actions">${actions}</div>` : ''}
-        ${note}
-      </div>
-      ${visual ? `<div class="hero__visual">${visual}</div>` : ''}
-    </div>
-  </section>`;
-}

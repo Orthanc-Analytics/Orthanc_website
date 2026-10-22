@@ -1,4 +1,4 @@
-import { founderNames, operatorBlock } from './components.mjs';
+import { PRODUCTS, founderNames, operatorBlock, section } from './components.mjs';
 
 // Inline logo mark (same geometry as src/assets/brand/orthanc-mark.svg).
 export function mark(className = '') {
@@ -19,17 +19,16 @@ function langSwitch(c, where) {
 }
 
 function header(c) {
-  const items = ['polis', 'investors', 'company', 'contact'];
   return `<header class="hdr" data-hdr>
   <div class="hdr__in wrap">
     <a class="hdr__brand" href="${c.href('home')}"><span aria-hidden="true">${lockup(c)}</span><span class="sr">${c.t('common.homeLabel')}</span></a>
     <nav class="nav" id="site-nav" aria-label="${c.attr(c.t('common.nav.label'))}">
       <ul class="nav__list">
-        ${items.map(id => `<li><a class="nav__link" href="${c.href(id)}"${c.page.id === id ? ' aria-current="page"' : ''}>${c.t(`common.nav.${id}`)}</a></li>`).join('')}
+        ${PRODUCTS.map(([id, , short]) => `<li><a class="nav__link" href="${section(c, id)}">${short}</a></li>`).join('')}
       </ul>
       ${langSwitch(c, 'nav')}
     </nav>
-    <a class="btn btn--sm hdr__cta" href="${c.href('contact', { hash: 'demo' })}"><span class="hdr__cta-long">${c.t('common.cta.demo')}</span><span class="hdr__cta-short">${c.t('common.cta.demoShort')}</span></a>
+    <a class="btn btn--sm hdr__cta" href="${section(c, 'contact')}"><span class="hdr__cta-long">${c.t('common.cta.demo')}</span><span class="hdr__cta-short">${c.t('common.cta.demoShort')}</span></a>
     <button class="menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" data-label-open="${c.attr(c.t('common.nav.menu'))}" data-label-close="${c.attr(c.t('common.nav.close'))}">
       <span class="menu-btn__bars" aria-hidden="true"></span><span class="menu-btn__label">${c.t('common.nav.menu')}</span>
     </button>
@@ -62,18 +61,7 @@ function footer(c) {
         ${operatorBlock(c)}
       </div>
       <nav class="ftr__nav" aria-label="${c.attr(f('navLabel'))}">
-        ${col(f('platform'), [
-          [c.href('polis'), f('polisOverview')],
-          [c.href('polis', { hash: 'modules' }), f('polisModules')],
-          [c.href('polis', { hash: 'trust' }), f('trust')],
-          [c.href('polis', { hash: 'faq' }), f('faq')],
-        ])}
-        ${col(f('companyTitle'), [
-          [c.href('company'), f('about')],
-          [c.href('company', { hash: 'milestones' }), f('milestones')],
-          [c.href('investors'), f('investors')],
-          [c.href('contact'), f('contact')],
-        ])}
+        ${col(f('software'), PRODUCTS.map(([id, name]) => [section(c, id), name]))}
         ${col(f('legal'), [
           [c.href('privacy'), f('privacy')],
           [c.href('cookies'), f('cookies')],

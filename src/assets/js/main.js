@@ -1,5 +1,5 @@
 // Orthanc Analytics: progressive enhancements. The site works without this file:
-// the menu links stay visible, every module panel is shown and nothing animates.
+// the menu links stay visible, the hero map stays still and nothing animates.
 (() => {
   const d = document;
   const html = d.documentElement;
@@ -34,55 +34,6 @@
     window.matchMedia('(min-width: 960px)').addEventListener('change', (e) => { if (e.matches) setOpen(false); });
   }
 
-  // ---------------------------------------------------------------- tabs (Polis modules)
-  d.querySelectorAll('[data-tabs]').forEach((root) => {
-    const list = root.querySelector('.tabs__list');
-    const tabs = Array.from(root.querySelectorAll('.tabs__tab'));
-    const panels = tabs.map((t) => d.getElementById(t.dataset.panel));
-    if (!list || !tabs.length || panels.some((p) => !p)) return;
-
-    list.setAttribute('role', 'tablist');
-    if (root.dataset.tabsLabel) list.setAttribute('aria-label', root.dataset.tabsLabel);
-    tabs.forEach((tab, i) => {
-      tab.setAttribute('role', 'tab');
-      tab.setAttribute('aria-controls', panels[i].id);
-      panels[i].setAttribute('role', 'tabpanel');
-      panels[i].setAttribute('aria-labelledby', tab.id);
-      panels[i].tabIndex = 0;
-    });
-
-    const select = (index, focus) => {
-      tabs.forEach((tab, i) => {
-        const on = i === index;
-        tab.setAttribute('aria-selected', String(on));
-        tab.tabIndex = on ? 0 : -1;
-        panels[i].hidden = !on;
-      });
-      if (focus) {
-        tabs[index].focus();
-        tabs[index].scrollIntoView({ block: 'nearest', inline: 'nearest' });
-      }
-    };
-
-    tabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => select(i, false));
-      tab.addEventListener('keydown', (e) => {
-        let next = null;
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (i + 1) % tabs.length;
-        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (i - 1 + tabs.length) % tabs.length;
-        else if (e.key === 'Home') next = 0;
-        else if (e.key === 'End') next = tabs.length - 1;
-        if (next !== null) {
-          e.preventDefault();
-          select(next, true);
-        }
-      });
-    });
-
-    const fromHash = panels.findIndex((p) => `#${p.id}` === window.location.hash);
-    select(fromHash >= 0 ? fromHash : 0, false);
-  });
-
   // ---------------------------------------------------------------- hero ticker (European capitals)
   const ticker = d.querySelector('[data-ticker]');
   if (ticker) {
@@ -105,13 +56,13 @@
       if (timer || cities.length < 2) return;
       timer = window.setInterval(() => { i = (i + 1) % cities.length; show(); }, 2800);
       toggle.textContent = toggle.dataset.labelPause;
-      toggle.setAttribute('aria-pressed', 'false');
+      toggle.setAttribute('aria-label', toggle.dataset.ariaPause);
     };
     const pause = () => {
       window.clearInterval(timer);
       timer = null;
       toggle.textContent = toggle.dataset.labelPlay;
-      toggle.setAttribute('aria-pressed', 'true');
+      toggle.setAttribute('aria-label', toggle.dataset.ariaPlay);
     };
 
     if (cities.length && cityEl && coordEl && toggle) {
@@ -128,7 +79,7 @@
 
   // ---------------------------------------------------------------- reveal on scroll
   if ('IntersectionObserver' in window && !reduceMotion.matches) {
-    const items = d.querySelectorAll('.sec__head, .stat, .point, .tenet, .card, .pipe__step, .layer, .fact, .route, .tl, .audience__item, .check, .row, .band__in, .band__row');
+    const items = d.querySelectorAll('.sec__head, .audience__item, .mod, .band__in');
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

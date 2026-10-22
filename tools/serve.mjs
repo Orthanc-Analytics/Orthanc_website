@@ -44,8 +44,8 @@ http.createServer((req, res) => {
   const r = resolve(req.url);
   if (r?.redirect) { res.writeHead(301, { Location: r.redirect }); return res.end(); }
   const file = r?.file && fs.existsSync(r.file) ? r.file : null;
-  const status = file ? 200 : 404;
-  const body = fs.readFileSync(file ?? path.join(DIST, '404.html'));
-  res.writeHead(status, { 'Content-Type': TYPES[path.extname(file ?? '.html')] ?? 'application/octet-stream', 'Cache-Control': 'no-cache' });
+  const served = file ?? path.join(DIST, '404.html');
+  res.writeHead(file ? 200 : 404, { 'Content-Type': TYPES[path.extname(served)] ?? 'application/octet-stream', 'Cache-Control': 'no-cache' });
+  const body = fs.readFileSync(served);
   res.end(body);
 }).listen(port, () => console.log(`Serving dist/ on http://localhost:${port}/ (also under ${basePath || '/'}/)`));

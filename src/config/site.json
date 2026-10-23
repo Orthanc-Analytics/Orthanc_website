@@ -1,5 +1,5 @@
 {
-  "_help": "Who runs the site, and how to reach them. Shown in the footer of every page, on the Contact page, and in the privacy policy and terms. A null value shows as a bracketed placeholder ([ADDRESS] / [INDIRIZZO]) and is listed as a warning by `npm run build`. See README.md.",
+  "_help": "Who runs the site, and how to reach them. Shown in the footer of every page and in the privacy policy and terms. A null value shows as a bracketed placeholder ([ADDRESS] / [INDIRIZZO]) and is listed as a warning by `npm run build`. See README.md.",
   "siteUrl": "https://orthanc-analytics.github.io/Orthanc_website",
   "brandName": "Orthanc Analytics",
   "company": {
@@ -16,7 +16,6 @@
     "emailProvider": null
   },
   "dates": {
-    "legalUpdated": "2026-10-06",
-    "factsCheckedOn": "2026-10-06"
+    "legalUpdated": "2026-10-22"
   }
 }

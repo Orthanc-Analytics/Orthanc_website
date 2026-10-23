@@ -1,8 +1,8 @@
 # Website interview guide
 
-The best website copy answers the questions customers and investors actually ask. Use this guide to collect them from the people who talk to customers, then update the site (`src/i18n/en.json` and `it.json`, especially the Polis FAQ and the Investors page).
+The best website copy answers the questions customers actually ask. Use this guide to collect them from the people who talk to customers, then update the site (`src/i18n/en.json` and `it.json`, especially the product features and the hero).
 
-**How to run it.** 20–30 minutes per person, one person at a time. Record the exact words people use, not your summary. Interview at least: a founder, whoever runs demos or sales, an analyst who uses Orthanc Polis daily, and whoever handles investors.
+**How to run it.** 20–30 minutes per person, one person at a time. Record the exact words people use, not your summary. Interview at least: a founder, whoever runs demos or sales, and an analyst who uses Orthanc Polis daily.
 
 ## For people who talk to prospects (sales, demos, founders)
 
@@ -22,13 +22,6 @@ The best website copy answers the questions customers and investors actually ask
 3. Where do users get confused (terms, labels, numbers)? Which words do they use instead of ours?
 4. What do users ask for that isn't built yet?
 
-## For whoever handles investors
-
-1. What do investors ask first? What do they misunderstand about the market?
-2. Which numbers do they want to see (users, pilots, revenue, pipeline, retention)? Which can we publish, with what context and date?
-3. What is in the data room today? What is missing?
-4. Which part of the story ("why us, why now") lands best?
-
 ## For everyone
 
 1. If you could change one thing on the website, what would it be?
@@ -38,7 +31,5 @@ The best website copy answers the questions customers and investors actually ask
 ## After the interviews
 
 - Group the questions by theme and frequency.
-- Update the **Polis FAQ** (`polis.faq.items`) with the top questions, in the customers' own words.
-- Add verified traction to `src/content/traction.json` (each item needs context, date and source).
-- Add team members to `src/content/team.json` with a "why us" line.
+- Update the **product features** (`home.polis.features`, `home.solo.features`, `home.logos.features`) in the customers' own words.
 - Re-check every claim against the brand kit's "words to avoid" table.

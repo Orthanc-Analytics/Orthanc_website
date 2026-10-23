@@ -36,6 +36,8 @@ Desk research to position the Orthanc Analytics website. Method: web search resu
 
 ## Where Orthanc can stand out (applied on the site)
 
+_The site became a single page in October 2026; section names in the notes below refer to the earlier multi-page version._
+
 1. **"Places, not people."** Territorial intelligence with no voter files, which fits EU rules on political advertising. *Used in the hero, Method and FAQ.*
 2. **Provenance as a product feature:** sources, checksums, human approval, honest empty states. *Method, Trust and pipeline sections.*
 3. **An openly right-of-centre European vendor.** European tools are mostly nonpartisan or progressive. *Positioning line.*

@@ -5,8 +5,8 @@
 //   node build.mjs --strict also fail while a detail (address, email provider) is still a placeholder
 //
 // English pages are written at the site root, Italian pages under /it/.
-// Copy lives in src/i18n/{en,it}.json, who runs the site in src/config/site.json,
-// optional sections (team, traction, investor info, milestones) in src/content/.
+// One page (home) plus the legal pages. Copy lives in src/i18n/{en,it}.json, who runs the site in
+// src/config/site.json, map data in src/content/maps.json.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -27,20 +27,12 @@ site.siteUrl = site.siteUrl.replace(/\/+$/, '');
 const basePath = new URL(site.siteUrl).pathname.replace(/\/+$/, '');
 const dicts = Object.fromEntries(LANGS.map(l => [l, readJSON(`i18n/${l}.json`)]));
 const content = {
-  milestones: readJSON('content/milestones.json').items,
-  team: readJSON('content/team.json').members,
-  traction: readJSON('content/traction.json').items,
-  investors: readJSON('content/investors.json'),
   maps: readJSON('content/maps.json'),
 };
 
 // Page registry: id, i18n key, file name per language, template.
 const PAGES = [
   { id: 'home', key: 'home', slug: { en: 'index.html', it: 'index.html' }, tpl: 'home' },
-  { id: 'polis', key: 'polis', slug: { en: 'polis.html', it: 'polis.html' }, tpl: 'polis' },
-  { id: 'investors', key: 'investors', slug: { en: 'investors.html', it: 'investitori.html' }, tpl: 'investors' },
-  { id: 'company', key: 'company', slug: { en: 'company.html', it: 'azienda.html' }, tpl: 'company' },
-  { id: 'contact', key: 'contact', slug: { en: 'contact.html', it: 'contatti.html' }, tpl: 'contact' },
   { id: 'privacy', key: 'legal.privacy', slug: { en: 'privacy.html', it: 'privacy.html' }, tpl: 'legal' },
   { id: 'cookies', key: 'legal.cookies', slug: { en: 'cookies.html', it: 'cookie.html' }, tpl: 'legal' },
   { id: 'terms', key: 'legal.terms', slug: { en: 'terms.html', it: 'termini.html' }, tpl: 'legal' },
@@ -49,6 +41,15 @@ const PAGES = [
   { id: 'startup', key: 'legal.startup', slug: { en: 'innovative-startup.html', it: 'startup-innovativa.html' }, tpl: 'legal', unlisted: true },
 ];
 const byId = Object.fromEntries(PAGES.map(p => [p.id, p]));
+
+// Pages of the earlier multi-page site, now sections of the home page. Each old address gets a small
+// redirect page (noindex, not in the sitemap, no external files) so links shared before the redesign keep working.
+const MOVED = [
+  { slug: { en: 'polis.html', it: 'polis.html' }, hash: 'polis' },
+  { slug: { en: 'investors.html', it: 'investitori.html' }, hash: '' },
+  { slug: { en: 'company.html', it: 'azienda.html' }, hash: 'built-for' },
+  { slug: { en: 'contact.html', it: 'contatti.html' }, hash: 'contact' },
+];
 
 // ---------------------------------------------------------------- checks
 
@@ -70,7 +71,7 @@ for (const a of LANGS) for (const b of LANGS) {
 const founders = site.company.founders ?? [];
 if (!founders.length) errors.push('company.founders is empty: the site must say who runs it');
 founders.forEach((n, i) => { if (!n) warnings.push(`company.founders[${i}] is not set: shown as a placeholder on the site`); });
-if (!site.company.address) warnings.push('company.address is not set: shown as a placeholder in the footer, contact page, privacy policy and terms');
+if (!site.company.address) warnings.push('company.address is not set: shown as a placeholder in the footer, privacy policy and terms');
 if (!site.company.email) errors.push('company.email is not set');
 if (!site.privacy?.emailProvider) warnings.push('privacy.emailProvider is not set: shown as a placeholder in the privacy policy');
 
@@ -203,6 +204,39 @@ for (const page of PAGES) {
   fs.writeFileSync(path.join(OUT, '404.html'), html);
 }
 
+// Redirects from the old page addresses to the matching section of the home page.
+for (const m of MOVED) {
+  for (const lang of LANGS) {
+    const target = `./${m.hash ? `#${m.hash}` : ''}`;
+    const mv = lookup(lang, 'moved');
+    const home = makeContext(byId.home, lang).abs('home');
+    const html = `<!doctype html>
+<html lang="${lang}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${esc(mv.title)} | ${esc(site.brandName)}</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="${home}">
+  <meta http-equiv="refresh" content="0; url=${target}">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:,">
+  <style>body{margin:0;background:#000;color:#fff;font:1rem/1.6 system-ui,sans-serif}main{padding:64px 24px}h1{font-weight:400}a{color:#fff}</style>
+</head>
+<body>
+<main id="main">
+  <h1>${mv.title}</h1>
+  <p><a href="${target}">${mv.link}</a></p>
+</main>
+</body>
+</html>
+`;
+    const file = path.join(OUT, lang === DEFAULT_LANG ? '' : lang, m.slug[lang]);
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, html);
+  }
+}
+
 // ---------------------------------------------------------------- sitemap, robots
 
 const today = new Date().toISOString().slice(0, 10);
@@ -234,4 +268,4 @@ if (STRICT && warnings.length) {
   console.error(`error: ${warnings.length} placeholder warning(s) in --strict mode`);
   process.exit(1);
 }
-console.log(`Built ${built.length} pages + 404 into ${path.relative(ROOT, OUT)}/ (${LANGS.join(', ')}).`);
+console.log(`Built ${built.length} pages + 404 + ${MOVED.length * LANGS.length} redirects into ${path.relative(ROOT, OUT)}/ (${LANGS.join(', ')}).`);

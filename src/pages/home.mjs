@@ -1,4 +1,4 @@
-import { btn, linkArrow, mailto, privacyNote, secHead, stats, rows, europeMap, italyMap, ctaBand } from '../components.mjs';
+import { btn, linkArrow, mailto, privacyNote, secHead, europeMap, italyMap } from '../components.mjs';
 
 const CITIES = [
   ['roma', 'Roma', '41.9028° N', '12.4964° E'], ['madrid', 'Madrid', '40.4168° N', '3.7038° W'],
@@ -9,156 +9,123 @@ const CITIES = [
   ['athina', 'Athína', '37.9838° N', '23.7275° E'], ['stockholm', 'Stockholm', '59.3293° N', '18.0686° E'],
 ];
 
+// The one page: what Orthanc does (hero), who it is built for, the three products and their features, contact.
 export default function home(c) {
   const t = c.t;
-  const demo = c.href('contact', { hash: 'demo' });
+  const h = k => t(`home.${k}`);
+  const email = c.site.company.email;
   const [first] = CITIES;
 
   const hero = `<section class="hero hero--home" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__copy">
-        <p class="eyebrow mono">${t('home.hero.eyebrow')}</p>
-        <h1 class="h1" id="hero-title">${t('home.hero.title')}</h1>
-        <p class="lead hero__lead">${t('home.hero.lead')}</p>
-        <div class="actions">
-          ${btn(demo, t('common.cta.demoPolis'))}
-          ${btn(c.href('polis'), t('home.hero.secondary'), 'ghost')}
-        </div>
+        <p class="eyebrow mono">${h('hero.eyebrow')}</p>
+        <h1 class="h1" id="hero-title">${h('hero.title')}</h1>
+        <p class="lead hero__lead">${h('hero.lead')}</p>
+        <div class="actions">${btn('#contact', t('common.cta.demo'))}</div>
       </div>
       <div class="hero__visual">
         ${europeMap(c, { className: 'map--hero' })}
         <div class="ticker" data-ticker='${JSON.stringify(CITIES.map(([k, n, la, lo]) => [k, n.toUpperCase(), `${la} · ${lo}`]))}'>
           <p class="ticker__text mono" aria-hidden="true"><span class="ticker__dot"></span><span class="ticker__city" data-ticker-city>${first[1].toUpperCase()}</span><span class="ticker__coord" data-ticker-coord>${first[2]} · ${first[3]}</span></p>
-          <button type="button" class="ticker__btn mono" data-ticker-toggle hidden data-label-pause="${c.attr(t('home.hero.tickerPause'))}" data-label-play="${c.attr(t('home.hero.tickerPlay'))}">${t('home.hero.tickerPause')}</button>
+          <button type="button" class="ticker__btn mono" data-ticker-toggle hidden data-label-pause="${c.attr(h('hero.tickerPause'))}" data-label-play="${c.attr(h('hero.tickerPlay'))}" data-aria-pause="${c.attr(h('hero.tickerPauseLabel'))}" data-aria-play="${c.attr(h('hero.tickerPlayLabel'))}" aria-label="${c.attr(h('hero.tickerPauseLabel'))}">${h('hero.tickerPause')}</button>
         </div>
       </div>
     </div>
   </section>`;
 
-  const evidence = `<section class="sec sec--evidence" aria-labelledby="evidence-title">
-    <div class="wrap">
-      <h2 class="label mono" id="evidence-title">${t('home.evidence.title')}</h2>
-      ${stats(t('home.evidence.items').map(s => ({ ...s, srcLabel: t('common.sourceLabel') })), 4)}
-    </div>
-  </section>`;
-
-  const problem = `<section class="sec" id="problem" aria-labelledby="problem-title">
+  const builtFor = `<section class="sec" id="built-for" aria-labelledby="built-title">
     <div class="wrap split">
-      ${secHead({ idx: '01', label: t('home.problem.label'), title: t('home.problem.title'), lead: t('home.problem.lead'), id: 'problem-title' })}
+      ${secHead({ idx: '01', label: h('builtFor.label'), title: h('builtFor.title'), id: 'built-title' })}
       <div>
-        <ol class="points">
-          ${t('home.problem.points').map(p => `<li class="point"><h3 class="point__title">${p.title}</h3><p>${p.body}</p></li>`).join('')}
-        </ol>
-        <p class="answer">${t('home.problem.answer')}</p>
-      </div>
-    </div>
-  </section>`;
-
-  const capabilities = `<section class="sec" id="capabilities" aria-labelledby="cap-title">
-    <div class="wrap split">
-      <div>
-        ${secHead({ idx: '02', label: t('home.capabilities.label'), title: t('home.capabilities.title'), lead: t('home.capabilities.lead'), id: 'cap-title' })}
-        <p class="sec__more">${linkArrow(c.href('polis', { hash: 'modules' }), t('home.capabilities.link'))}</p>
-      </div>
-      ${rows(t('home.capabilities.items'), { openFirst: true })}
-    </div>
-  </section>`;
-
-  const method = `<section class="sec sec--inv" id="method" aria-labelledby="method-title">
-    <div class="wrap">
-      ${secHead({ idx: '03', label: t('home.method.label'), title: t('home.method.title'), lead: t('home.method.lead'), id: 'method-title' })}
-      <ul class="tenets">
-        ${t('home.method.tenets').map((x, i) => `<li class="tenet"><p class="tenet__n mono">${String(i + 1).padStart(2, '0')}</p><h3 class="tenet__title">${x.title}</h3><p>${x.body}</p></li>`).join('')}
-      </ul>
-      <p class="sec__more">${linkArrow(c.href('polis', { hash: 'trust' }), t('home.method.link'))}</p>
-    </div>
-  </section>`;
-
-  const audience = `<section class="sec" id="europe" aria-labelledby="europe-title">
-    <div class="wrap split">
-      ${secHead({ idx: '04', label: t('home.europe.label'), title: t('home.europe.title'), lead: t('home.europe.lead'), id: 'europe-title' })}
-      <div>
-        <h3 class="h4">${t('home.europe.audienceTitle')}</h3>
         <ul class="audience">
-          ${t('home.europe.audience').map(a => `<li class="audience__item"><h4 class="audience__title">${a.title}</h4><p>${a.body}</p></li>`).join('')}
+          ${h('builtFor.audience').map(a => `<li class="audience__item"><h3 class="audience__title">${a.title}</h3><p>${a.body}</p></li>`).join('')}
         </ul>
-        <p class="note">${t('home.europe.note')} ${linkArrow(c.href('contact', { hash: 'demo' }), t('home.europe.noteLink'))}</p>
+        <p class="note">${h('builtFor.principle')}</p>
       </div>
     </div>
   </section>`;
 
-  const img = (name, alt, pos = 'center') => `<img src="${c.asset(`img/${name}-640.webp`)}" srcset="${c.asset(`img/${name}-640.webp`)} 640w, ${c.asset(`img/${name}-1024.webp`)} 1024w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 45vw, 100vw" width="1024" height="1024" alt="${c.attr(alt)}" loading="lazy" decoding="async" style="object-position:${pos}">`;
-  const p = k => t(`home.platforms.${k}`);
-  const platforms = `<section class="sec" id="platforms" aria-labelledby="platforms-title">
-    <div class="wrap">
-      ${secHead({ idx: '05', label: p('label'), title: p('title'), lead: p('lead'), id: 'platforms-title' })}
-      <ul class="cards">
-        <li class="card">
-          <div class="card__media card__media--map">${italyMap(c, { pins: false, alt: p('polis.alt') })}</div>
-          <p class="card__tag mono"><span class="dot dot--live" aria-hidden="true"></span>${p('polis.tag')}</p>
-          <h3 class="card__title">Orthanc Polis</h3>
-          <p>${p('polis.body')}</p>
-          ${linkArrow(c.href('polis'), p('polis.link'))}
-        </li>
-        <li class="card">
-          <div class="card__media">${img('solo-dashboard', p('solo.alt'))}</div>
-          <p class="card__tag mono">${p('solo.tag')}</p>
-          <h3 class="card__title">Orthanc Solo</h3>
-          <p>${p('solo.body')}</p>
-          ${linkArrow(demo, p('solo.link'))}
-        </li>
-        <li class="card">
-          <div class="card__media">${img('logos-teaser', p('logos.alt'), 'center 38%')}</div>
-          <p class="card__tag mono">${p('logos.tag')}</p>
-          <h3 class="card__title">Orthanc Logos</h3>
-          <p>${p('logos.body')}</p>
-          ${privacyNote(c)}
-          ${linkArrow(mailto(c.site.company.email, p('logos.mailSubject')), p('logos.link'))}
-        </li>
-      </ul>
-    </div>
-  </section>`;
+  // Product visuals are shown at most 320 CSS px wide (280 px below 960 px).
+  const img = (src, w, h2, alt, { srcset = '', pos = 'center' } = {}) => `<img src="${c.asset(`img/${src}`)}"${srcset ? ` srcset="${srcset}" sizes="(min-width: 960px) 320px, 280px"` : ''} width="${w}" height="${h2}" alt="${c.attr(alt)}" loading="lazy" decoding="async" style="object-position:${pos}">`;
 
-  // How the products fit together: Polis and Solo feed Logos.
-  const sys = k => t(`home.system.${k}`);
-  const node = (name, tag, role, live = false) => `<li class="system__node">
-          <p class="card__tag mono">${live ? '<span class="dot dot--live" aria-hidden="true"></span>' : ''}${tag}</p>
-          <h3 class="system__name">${name}</h3>
-          <p>${role}</p>
-        </li>`;
-  const system = `<section class="sec" id="system" aria-labelledby="system-title">
-    <div class="wrap">
-      ${secHead({ idx: '06', label: sys('label'), title: sys('title'), lead: sys('lead'), id: 'system-title' })}
-      <div class="system">
-        <ul class="system__in">
-          ${node('Orthanc Polis', p('polis.tag'), sys('polis'), true)}
-          ${node('Orthanc Solo', p('solo.tag'), sys('solo'))}
-        </ul>
-        <p class="system__flow mono" aria-hidden="true"><span>${sys('feeds')}</span><span class="system__arrow system__arrow--h">→</span><span class="system__arrow system__arrow--v">↓</span></p>
-        <div class="system__out">
-          <p class="card__tag mono">${p('logos.tag')}</p>
-          <h3 class="system__name">Orthanc Logos</h3>
-          <p>${sys('logos')}</p>
-          <ul class="system__decide">${sys('decide').map(x => `<li class="chip chip--hollow mono">${x}</li>`).join('')}</ul>
+  // One full-width row per product: name, status, purpose, link and visual on the left; features on the right.
+  const product = (id, name, { media, map = false, live = false, cta, caption = '' }) => {
+    const p = k => h(`${id}.${k}`);
+    return `<article class="mod" id="${id}" aria-labelledby="${id}-title">
+        <div class="mod__head">
+          <p class="mod__tag mono">${live ? '<span class="dot dot--live" aria-hidden="true"></span>' : ''}${p('tag')}</p>
+          <h3 class="mod__name" id="${id}-title">${name}</h3>
+          <p class="mod__purpose">${p('purpose')}</p>
+          <div class="mod__cta">${cta}</div>
+          <div class="mod__visual">
+            <div class="frame${map ? ' frame--map' : ''}">${media}</div>
+            ${caption ? `<p class="fig">${caption}</p>` : ''}
+          </div>
         </div>
+        <div class="mod__body">
+          <ul class="feats" aria-label="${c.attr(`${h('software.featuresLabel')}: ${name}`)}">
+            ${p('features').map(f => `<li class="feat"><h4 class="feat__title">${f.title}</h4><p>${f.body}</p></li>`).join('')}
+          </ul>
+        </div>
+      </article>`;
+  };
+
+  const software = `<section class="sec sec--software" id="software" aria-labelledby="software-title">
+    <div class="wrap">
+      ${secHead({ idx: '02', label: h('software.label'), title: h('software.title'), id: 'software-title' })}
+      <div class="mods">
+        ${product('polis', 'Orthanc Polis', {
+          live: true,
+          map: true,
+          media: italyMap(c, { pins: false, alt: h('polis.alt') }),
+          cta: linkArrow('#contact', h('polis.link')),
+        })}
+        ${product('solo', 'Orthanc Solo', {
+          media: img('solo-wards-656.webp', 656, 492, h('solo.alt')),
+          caption: h('solo.caption'),
+          cta: linkArrow('#contact', h('solo.link')),
+        })}
+        ${product('logos', 'Orthanc Logos', {
+          media: img('logos-teaser-640.webp', 1024, 1024, h('logos.alt'), { pos: 'center 38%', srcset: `${c.asset('img/logos-teaser-640.webp')} 640w, ${c.asset('img/logos-teaser-1024.webp')} 1024w` }),
+          cta: `${linkArrow(mailto(email, h('logos.mailSubject')), h('logos.link'))}${privacyNote(c)}`,
+        })}
       </div>
     </div>
   </section>`;
 
-  const investorBand = `<section class="band band--line" aria-labelledby="inv-title">
-    <div class="wrap band__row">
-      <div>
-        <p class="idx mono">${t('home.investorBand.label')}</p>
-        <h2 class="h3" id="inv-title">${t('home.investorBand.title')}</h2>
+  const k = key => h(`contact.${key}`);
+  const contact = `<section class="band band--cta" id="contact" aria-labelledby="contact-title">
+    <div class="band__bg" aria-hidden="true"></div>
+    <div class="wrap band__in">
+      <p class="idx mono"><span class="idx__n">[03]</span> ${k('label')}</p>
+      <h2 class="h2" id="contact-title">${k('title')}</h2>
+      <p class="lead">${k('lead')}</p>
+      <div class="actions">
+        ${btn(mailto(email, k('demoSubject'), k('demoBody')), k('demo'))}
+        ${btn(mailto(email, k('emailSubject')), k('email'), 'ghost')}
       </div>
-      <p>${t('home.investorBand.body')}</p>
-      ${linkArrow(c.href('investors'), t('home.investorBand.link'))}
+      <p class="note">${k('fallback').replace('{email}', `<a href="mailto:${email}">${c.esc(email)}</a>`)}</p>
+      ${privacyNote(c)}
     </div>
   </section>`;
+
+  const jsonld = [{
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Orthanc Polis',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    description: c.strip(h('polis.purpose')),
+    url: `${c.abs('home')}#polis`,
+    inLanguage: 'it',
+    publisher: { '@id': `${c.site.siteUrl}/#organization` },
+  }];
 
   return {
-    title: t('home.meta.title'),
-    description: t('home.meta.description'),
-    body: [hero, evidence, problem, capabilities, method, audience, platforms, system, investorBand, ctaBand(c)].join('\n'),
+    title: h('meta.title'),
+    description: h('meta.description'),
+    body: [hero, builtFor, software, contact].join('\n'),
+    jsonld,
   };
 }
